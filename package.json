@@ -1,0 +1,23 @@
+{
+  "name": "speedrun-bingo",
+  "version": "1.0.0",
+  "description": "Demo of how to build an app using marko-starter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marko-js-samples/marko-starter-demo"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.13.0",
+    "eslint-config-marko": "^1.0.1"
+  },
+  "dependencies": {
+    "marko": "^4.0.0",
+    "marko-starter": "^1.0.0"
+  },
+  "scripts": {
+    "start": "marko-starter server",
+    "build": "marko-starter build"
+  },
+  "private": true
+}
