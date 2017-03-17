@@ -1,3 +1,3 @@
-let App = require('./app/app.marko');
+let App = require('./app/app');
 
 App.renderSync().appendTo(document.body);
