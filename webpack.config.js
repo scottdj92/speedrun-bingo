@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -25,7 +24,7 @@ const common = merge([
     plugins: [
       new HtmlWebpackPlugin({
         template: 'index.html'
-      }),
+      })
     ]
   }
 ]);
@@ -34,7 +33,8 @@ module.exports = function(env) {
   if (env === 'production') {
     return merge([
       common,
-      parts.loadMarko(PATHS.app)
+      parts.loadMarko(PATHS.app),
+      parts.extractCSS(PATHS.app)
     ]);
   }
 
@@ -44,6 +44,7 @@ module.exports = function(env) {
       host: process.env.HOST,
       port: process.env.PORT
     }),
-    parts.loadMarko(PATHS.app)
+    parts.loadMarko(PATHS.app),
+    parts.loadCSS(PATHS.app)
   ]);
-}
+};

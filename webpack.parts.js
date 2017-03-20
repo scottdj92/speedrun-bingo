@@ -1,3 +1,5 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 exports.devServer = function(options) {
   return {
     devServer: {
@@ -6,7 +8,7 @@ exports.devServer = function(options) {
       host: process.env.HOST,
       port: process.env.PORT
     }
-  }
+  };
 };
 
 exports.loadMarko = function(paths) {
@@ -20,12 +22,12 @@ exports.loadMarko = function(paths) {
         }
       ]
     }
-  }
+  };
 };
 
 exports.loadCSS = function(paths) {
   return {
-    modules: {
+    module: {
       rules: [
         {
           test: /\.scss$/,
@@ -34,5 +36,27 @@ exports.loadCSS = function(paths) {
         }
       ]
     }
-  }
-}
+  };
+};
+
+exports.extractCSS = function(paths) {
+  return {
+    plugins: [
+      new ExtractTextPlugin({
+        filename: 'bundle.css'
+      })
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          include: paths,
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'resolve-url-loader', 'sass-loader']
+          })
+        }
+      ]
+    }
+  };
+};
