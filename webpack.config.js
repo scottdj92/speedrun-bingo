@@ -33,7 +33,8 @@ const common = merge([
 module.exports = function(env) {
   if (env === 'production') {
     return merge([
-      common
+      common,
+      parts.loadMarko(PATHS.app)
     ]);
   }
 

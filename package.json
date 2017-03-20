@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --env dev",
-    "build": "webpack -p --production"
+    "build": "webpack -p --env production"
   },
   "private": true
 }

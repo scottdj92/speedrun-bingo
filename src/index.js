@@ -1,3 +1,3 @@
-let App = require('./app/app');
+const App = require('./app/app');
 
 App.renderSync().appendTo(document.body);
