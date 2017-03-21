@@ -52,11 +52,17 @@
                     width: 35px;
                 }
 
+                &:hover {
+                    background: #000;
+                    color: #fff;
+                }
+
                 background: #fff;
                 border: 1px #424242 solid;
                 height: 90px;
                 padding: 0px 5px;
                 text-align: center;
+                vertical-align: middle;
                 width: 95px;
                 max-width: 95px;
             }
