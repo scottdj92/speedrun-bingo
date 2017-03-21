@@ -14,7 +14,7 @@ $milestone-completed-bg-hover: #00a31f;
 .container {
     margin: 0 auto;
     overflow: auto;
-    padding: 8px 0px 16px 16px;
+    padding: 8px -10px 16px 16px;
     width: 976px;
 }
 
@@ -42,20 +42,6 @@ $milestone-completed-bg-hover: #00a31f;
             border-bottom: 2px solid black;
             background-color: black;
             background: black;
-        }
-
-        h2 {
-            clear: both;
-            color: #000;
-            display: block;
-            font-size: 100%;
-            font-weight: 700;
-            margin: 0px 0px 8px;
-        }
-
-        p {
-            margin: 0px;
-            padding: 0px 0px 8px;
         }
 
         float: right;
