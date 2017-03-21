@@ -1,3 +1,14 @@
+$milestone-bg: #fff;
+$milestone-bg-hover: #000;
+$milestone-color: #000;
+$milestone-color-hover: #fff;
+$milestone-border-color: #000;
+$header-bg: #fff;
+$header-bg-hover: #000;
+$header-color: #000;
+$header-color-hover: #fff;
+$header-border-color: #000 ;
+
 .container {
     margin: 0 auto;
     overflow: auto;
@@ -23,16 +34,16 @@
             &:first-child,
             &:last-child {
                 td {
-                    background: #fff;
-                    border: 1px #000 solid;
-                    color: #000;
+                    background: $header-bg;
+                    border: 1px $header-border-color solid;
+                    color: $header-color;
                     font-size: 75%;
                     font-weight: 700;
                     height: 30px;
 
                     &:hover {
-                        background: #000;
-                        color: #fff;
+                        background: $header-bg-hover;
+                        color: $header-color-hover;
                     }
                 }
             }
@@ -40,25 +51,26 @@
             td {
                 &:first-child {
                     &:hover {
-                        background: #000;
-                        color: #fff;
+                        background: $header-bg-hover;
+                        color: $header-color-hover;
                     }
 
-                    background: #fff;
-                    border: 1px #000 solid;
-                    color: #000;
+                    background: $header-bg;
+                    border: 1px $header-border-color solid;
+                    color: $header-color;
                     font-size: 75%;
                     font-weight: 700;
                     width: 35px;
                 }
 
                 &:hover {
-                    background: #000;
-                    color: #fff;
+                    background: $milestone-bg-hover;
+                    color: $milestone-color-hover;
                 }
 
-                background: #fff;
-                border: 1px #424242 solid;
+                background: $milestone-bg;
+                color: $milestone-color;
+                border: 1px $milestone-border-color solid;
                 height: 90px;
                 padding: 0px 5px;
                 text-align: center;
