@@ -1,6 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-exports.devServer = function(options) {
+exports.devServer = function (options) {
   return {
     devServer: {
       historyApiFallback: true,
@@ -11,7 +11,7 @@ exports.devServer = function(options) {
   };
 };
 
-exports.loadMarko = function(paths) {
+exports.loadMarko = function (paths) {
   return {
     module: {
       rules: [
@@ -25,7 +25,7 @@ exports.loadMarko = function(paths) {
   };
 };
 
-exports.loadCSS = function(paths) {
+exports.loadCSS = function (paths) {
   return {
     module: {
       rules: [
@@ -39,7 +39,7 @@ exports.loadCSS = function(paths) {
   };
 };
 
-exports.extractCSS = function(paths) {
+exports.extractCSS = function (paths) {
   return {
     plugins: [
       new ExtractTextPlugin({
