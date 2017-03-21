@@ -1,0 +1,65 @@
+.container {
+    margin: 0 auto;
+    overflow: auto;
+    padding: 8px 0px 16px 16px;
+    width: 976px;
+}
+
+.bingoPage {
+    .results {
+        float: left;
+        margin-right: 16px;
+        text-align: right;
+        width: 594px;
+    }
+
+    .about {
+        float: right;
+        width: 365px;
+    }
+
+    .bingo {
+        tr {
+            &:first-child,
+            &:last-child {
+                td {
+                    background: #fff;
+                    border: 1px #000 solid;
+                    color: #000;
+                    font-size: 75%;
+                    font-weight: 700;
+                    height: 30px;
+
+                    &:hover {
+                        background: #000;
+                        color: #fff;
+                    }
+                }
+            }
+
+            td {
+                &:first-child {
+                    &:hover {
+                        background: #000;
+                        color: #fff;
+                    }
+
+                    background: #fff;
+                    border: 1px #000 solid;
+                    color: #000;
+                    font-size: 75%;
+                    font-weight: 700;
+                    width: 35px;
+                }
+
+                background: #fff;
+                border: 1px #424242 solid;
+                height: 90px;
+                padding: 0px 5px;
+                text-align: center;
+                width: 95px;
+                max-width: 95px;
+            }
+        }
+    }
+}
