@@ -7,7 +7,9 @@ $header-bg: #fff;
 $header-bg-hover: #000;
 $header-color: #000;
 $header-color-hover: #fff;
-$header-border-color: #000 ;
+$header-border-color: #000;
+$milestone-completed-bg: #007c18;
+$milestone-completed-bg-hover: #00a31f;
 
 .container {
     margin: 0 auto;
@@ -66,6 +68,14 @@ $header-border-color: #000 ;
                 &:hover {
                     background: $milestone-bg-hover;
                     color: $milestone-color-hover;
+                }
+
+                &.greensquare {
+                    &:hover {
+                        background: $milestone-completed-bg-hover;
+                    }
+
+                    background: $milestone-completed-bg;
                 }
 
                 background: $milestone-bg;
