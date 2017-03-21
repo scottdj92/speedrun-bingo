@@ -1,3 +1,9 @@
+class {
+  addMileStone() {
+    console.log('clicked');
+  }
+}
+
 <section class='table'>
   <table>
     <thead>
@@ -11,4 +17,11 @@
       <tr></tr>
     </tbody>
   </table>
+</section>
+
+<section class="add-milestone">
+  <form>
+    <input type="textarea" name="milestone_input" value="test"/>
+    <button type="button" on-click('addMileStone')>Add Milestone</button>
+  </form>
 </section>
