@@ -1,4 +1,9 @@
 class {
+  onCreate() {
+    this.state = {
+      milestones: []
+    };
+  }
   addMileStone() {
     console.log('clicked');
   }
@@ -21,7 +26,9 @@ class {
 
 <section class="add-milestone">
   <form>
-    <input type="textarea" name="milestone_input" value="test"/>
-    <button type="button" on-click('addMileStone')>Add Milestone</button>
+    <p class="control">
+      <input class="input" type="text" name="milestone_input"/>
+    </p>
+    <button class="button" type="button" on-click('addMileStone')>Add Milestone</button>
   </form>
 </section>
