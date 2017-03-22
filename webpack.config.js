@@ -19,7 +19,11 @@ const common = merge([
       filename: 'bundle.js'
     },
     resolve: {
-      extensions: ['.js', '.marko', '.scss']
+      extensions: ['.js', '.jsx', '.scss'],
+      alias: {
+        Components: path.resolve(__dirname, 'src/app/components/'),
+        SassVariables: path.resolve(__dirname, 'src/_vars.scss')
+      }
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -33,7 +37,7 @@ module.exports = function (env) {
   if (env === 'production') {
     return merge([
       common,
-      parts.loadMarko(PATHS.app),
+      parts.loadJavascript(PATHS.app),
       parts.extractCSS(PATHS.app)
     ]);
   }
@@ -44,7 +48,8 @@ module.exports = function (env) {
       host: process.env.HOST,
       port: process.env.PORT
     }),
-    parts.loadMarko(PATHS.app),
+    parts.loadJavascript(PATHS.app),
+    parts.lintJavascript(PATHS.app),
     parts.loadCSS(PATHS.app)
   ]);
 };

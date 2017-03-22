@@ -1,16 +1,3 @@
-$milestone-bg: $light;
-$milestone-bg-hover: $dark;
-$milestone-color: $dark;
-$milestone-color-hover: $light;
-$milestone-border-color: $dark;
-$header-bg: $light;
-$header-bg-hover: $dark;
-$header-color: $dark;
-$header-color-hover: $light;
-$header-border-color: $dark;
-$milestone-completed-bg: $success;
-$milestone-completed-bg-hover: $primary;
-
 .container {
     margin: 0 auto;
     overflow: auto;
@@ -53,16 +40,13 @@ $milestone-completed-bg-hover: $primary;
             &:first-child,
             &:last-child {
                 td {
-                    background: $header-bg;
-                    border: 1px $header-border-color solid;
-                    color: $header-color;
                     font-size: 75%;
                     font-weight: 700;
                     height: 30px;
 
                     &:hover {
-                        background: $header-bg-hover;
-                        color: $header-color-hover;
+                        background: aqua;
+                        color: green;
                     }
                 }
             }
@@ -70,34 +54,29 @@ $milestone-completed-bg-hover: $primary;
             td {
                 &:first-child {
                     &:hover {
-                        background: $header-bg-hover;
-                        color: $header-color-hover;
+                        background: aqua;
+                        color: blue;
                     }
 
-                    background: $header-bg;
-                    border: 1px $header-border-color solid;
-                    color: $header-color;
                     font-size: 75%;
                     font-weight: 700;
                     width: 35px;
                 }
 
                 &:hover {
-                    background: $milestone-bg-hover;
-                    color: $milestone-color-hover;
+                    background: green;
+                    color: blue;
                 }
 
                 &.greensquare {
                     &:hover {
-                        background: $milestone-completed-bg-hover;
+                        background: green;
                     }
 
-                    background: $milestone-completed-bg;
+                    background: green;
                 }
 
-                background: $milestone-bg;
-                color: $milestone-color;
-                border: 1px $milestone-border-color solid;
+                background: aqua;
                 height: 90px;
                 padding: 0px 5px;
                 text-align: center;

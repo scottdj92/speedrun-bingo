@@ -1,6 +1,26 @@
-import App from './app/app';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 // import styles
-import './app/_main.scss';
+import './_main.scss';
 
-App.renderSync().appendTo(document.body);
+// import components here
+import Header from 'Components/header/header';
+import Board from 'Components/board/board';
+
+class App extends Component {
+  constructor () {
+    super();
+  }
+
+  render () {
+    return (
+      <div>
+        <Header/>
+        <Board/>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App/>, document.getElementById('main'));
