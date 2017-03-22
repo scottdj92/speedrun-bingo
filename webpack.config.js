@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -44,6 +45,11 @@ module.exports = function (env) {
 
   return merge([
     common,
+    {
+      plugins: [
+        new webpack.NamedModulesPlugin()
+      ]
+    },
     parts.devServer({
       host: process.env.HOST,
       port: process.env.PORT
