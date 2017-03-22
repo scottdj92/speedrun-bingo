@@ -1,0 +1,15 @@
+//add your global sass variables here, and import it whenever necessary within your components
+@import "~bulma/sass/utilities/variables.sass";
+
+$milestone-bg: $light;
+$milestone-bg-hover: $dark;
+$milestone-color: $dark;
+$milestone-color-hover: $light;
+$milestone-border-color: $dark;
+$header-bg: $light;
+$header-bg-hover: $dark;
+$header-color: $dark;
+$header-color-hover: $light;
+$header-border-color: $dark;
+$milestone-completed-bg: $success;
+$milestone-completed-bg-hover: $primary;

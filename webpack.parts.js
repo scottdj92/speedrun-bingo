@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 exports.devServer = function (options) {
@@ -6,27 +7,53 @@ exports.devServer = function (options) {
       historyApiFallback: true,
       stats: 'errors-only',
       host: process.env.HOST,
-      port: process.env.PORT
-    }
+      port: process.env.PORT,
+      hot: true,
+      stats: 'errors-only',
+    },
+    plugins: [
+      new webpack.HotModuleReplacementPlugin({})
+    ]
   };
 };
 
-exports.loadMarko = function (paths) {
+exports.loadJavascript= function(paths) {
   return {
     module: {
       rules: [
         {
-          test: /\.marko$/,
+          test: /\.(js|jsx)$/,
           include: paths,
-          loader: 'marko-loader'
+          loader: 'babel-loader',
+          query: {
+            cacheDirectory: true,
+            presets: ['react', 'es2015']
+          }
         }
       ]
     }
   };
 };
 
-exports.loadCSS = function (paths) {
+exports.lintJavascript = function({ paths, options }) {
   return {
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          include: paths,
+          enforce: 'pre',
+          loader: 'eslint-loader',
+          options: options
+        }
+      ]
+    }
+  }
+};
+
+exports.loadCSS = function(paths) {
+  return {
+    devtool: 'source-map',
     module: {
       rules: [
         {

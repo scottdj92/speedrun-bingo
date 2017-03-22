@@ -7,9 +7,6 @@ A bingo creator for gaming speedruns
 `npm start` or `yarn start` to start the dev server.
 
 ## Adding components
-Add your components to `src/app/app.marko` and import them as such. Ideally, you'd want to follow the Atomic Design principle using atoms/molecules/organisms/templates/pages
+Add your components to `src/index.js` and import them as such. Ideally, you'd want to follow the Atomic Design principle using atoms/molecules/organisms/templates/pages
 
 In order for components to be imported, you add the name of the folder and webpack will bundle it.
-
-### Caveats
-Because of how MarkoJS renders HTML, it is recommended that you do not give your components names that match HTML tags.

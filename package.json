@@ -1,19 +1,24 @@
 {
   "name": "speedrun-bingo",
   "version": "1.0.0",
-  "description": "Demo of how to build an app using marko-starter",
+  "description": "Speed run bingo using React",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marko-js-samples/marko-starter-demo"
+    "url": "https://github.com/scottdj92/speedrun-bingo"
   },
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
     "css-loader": "^0.27.3",
     "eslint": "^3.13.0",
     "eslint-config-marko": "^1.0.1",
+    "eslint-loader": "^1.6.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "html-webpack-plugin": "^2.28.0",
-    "marko-loader": "^1.3.0",
     "node-sass": "^4.5.0",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.3",
@@ -24,8 +29,8 @@
   },
   "dependencies": {
     "bulma": "^0.4.0",
-    "marko": "^4.1.2",
-    "marko-starter": "^1.0.0"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "scripts": {
     "start": "webpack-dev-server --env dev",
