@@ -1,10 +1,25 @@
+class {
+  onCreate() {
+    console.log('I am here again');
+    this.state = {
+      data: [
+        {
+          title: 'test',
+          volume: 4,
+          completed: false
+        }
+      ]
+    }
+  }
+}
+
 <div class="container">
     <div class="bingoPage">
         <div class="about">
             <h2 class="title is-3">Generate a new card</h2>
             <div class="content">
                 <p>
-                    Create a new card based on seed. 
+                    Create a new card based on seed.
                 </p>
                 <p>
                     The seed is used to generate the board. Changing the seed will make a new board.
