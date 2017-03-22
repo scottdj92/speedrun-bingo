@@ -1,3 +1,5 @@
+@import "../../../_vars";
+
 .container {
     margin: 0 auto;
     overflow: auto;
@@ -40,13 +42,16 @@
             &:first-child,
             &:last-child {
                 td {
+                    background: $header-bg;
+                    border: 1px $header-border-color solid;
+                    color: $header-color;
                     font-size: 75%;
                     font-weight: 700;
                     height: 30px;
 
                     &:hover {
-                        background: aqua;
-                        color: green;
+                        background: $header-bg-hover;
+                        color: $header-color-hover;
                     }
                 }
             }
@@ -54,29 +59,34 @@
             td {
                 &:first-child {
                     &:hover {
-                        background: aqua;
-                        color: blue;
+                        background: $header-bg-hover;
+                        color: $header-color-hover;
                     }
 
+                    background: $header-bg;
+                    border: 1px $header-border-color solid;
+                    color: $header-color;
                     font-size: 75%;
                     font-weight: 700;
                     width: 35px;
                 }
 
                 &:hover {
-                    background: green;
-                    color: blue;
+                    background: $milestone-bg-hover;
+                    color: $milestone-color-hover;
                 }
 
                 &.greensquare {
                     &:hover {
-                        background: green;
+                        background: $milestone-completed-bg-hover;
                     }
 
-                    background: green;
+                    background: $milestone-completed-bg;
                 }
 
-                background: aqua;
+                background: $milestone-bg;
+                color: $milestone-color;
+                border: 1px $milestone-border-color solid;
                 height: 90px;
                 padding: 0px 5px;
                 text-align: center;
