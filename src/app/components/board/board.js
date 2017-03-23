@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 
 import './board.scss';
 
+import Tile from '../tile/tile'
+
 export default class Board extends Component {
   constructor (props) {
     super(props);
 
     this.state = {
-      seed: ''
+      seed: '',
     };
   }
 
@@ -16,12 +18,8 @@ export default class Board extends Component {
   }
 
   handleChange(e) {
-      console.log(e.target.value);
+    console.log(e.target.value);
     this.setState({seed: e.target.value});
-  }
-
-  bingoCellClick(value) {
-      console.log(value);
   }
 
   render () {
@@ -72,55 +70,55 @@ export default class Board extends Component {
                   <table className="bingo">
                       <tbody>
                           <tr>
-                              <td onClick={this.bingoCellClick.bind(this, "tl-br")}>TL-BR</td>
-                              <td onClick={this.bingoCellClick.bind(this, "col1")}>COL1</td>
-                              <td onClick={this.bingoCellClick.bind(this, "col2")}>COL2</td>
-                              <td onClick={this.bingoCellClick.bind(this, "col3")}>COL3</td>
-                              <td onClick={this.bingoCellClick.bind(this, "col4")}>COL4</td>
-                              <td onClick={this.bingoCellClick.bind(this, "col5")}>COL5</td>
+                              <Tile title="TL-BR" />
+                              <Tile title="COL1" />
+                              <Tile title="COL2" />
+                              <Tile title="COL3" />
+                              <Tile title="COL4" />
+                              <Tile title="COL5" />
                           </tr>
                           <tr>
-                              <td onClick={this.bingoCellClick.bind(this, "row1")}>ROW1</td>
-                              <td onClick={this.bingoCellClick.bind(this, "11")}>Slot 1</td>
-                              <td onClick={this.bingoCellClick.bind(this, "12")}>Slot 2</td>
-                              <td onClick={this.bingoCellClick.bind(this, "13")}>Slot 3</td>
-                              <td onClick={this.bingoCellClick.bind(this, "14")}>Slot 4</td>
-                              <td onClick={this.bingoCellClick.bind(this, "15")}>Slot 5</td>
+                              <Tile title="ROW1" />
+                              <Tile title="Slot 1" />
+                              <Tile title="Slot 2" />
+                              <Tile title="Slot 3" />
+                              <Tile title="Slot 4" />
+                              <Tile title="Slot 5" />
                           </tr>
                           <tr>
-                              <td onClick={this.bingoCellClick.bind(this, "row2")}>ROW2</td>
-                              <td onClick={this.bingoCellClick.bind(this, "21")} className="greensquare">Slot 6</td>
-                              <td onClick={this.bingoCellClick.bind(this, "22")}>Slot 7</td>
-                              <td onClick={this.bingoCellClick.bind(this, "23")}>Slot 8</td>
-                              <td onClick={this.bingoCellClick.bind(this, "24")}>Slot 9</td>
-                              <td onClick={this.bingoCellClick.bind(this, "25")}>Slot 10</td>
+                              <Tile title="ROW2" />
+                              <Tile title="Slot 6" />
+                              <Tile title="Slot 7" />
+                              <Tile title="Slot 8" />
+                              <Tile title="Slot 9" />
+                              <Tile title="Slot 10" />
                           </tr>
                           <tr>
-                              <td onClick={this.bingoCellClick.bind(this, "row3")}>ROW3</td>
-                              <td onClick={this.bingoCellClick.bind(this, "31")}>Slot 11</td>
-                              <td onClick={this.bingoCellClick.bind(this, "32")}>Slot 12</td>
-                              <td onClick={this.bingoCellClick.bind(this, "33")}>Slot 13</td>
-                              <td onClick={this.bingoCellClick.bind(this, "34")}>Slot 14</td>
-                              <td onClick={this.bingoCellClick.bind(this, "35")}>Slot 15</td>
+                              <Tile title="ROW3" />
+                              <Tile title="Slot 11" />
+                              <Tile title="Slot 12" />
+                              <Tile title="Slot 13" />
+                              <Tile title="Slot 14" />
+                              <Tile title="Slot 15" />
                           </tr>
                           <tr>
-                              <td onClick={this.bingoCellClick.bind(this, "row4")}>ROW4</td>
-                              <td onClick={this.bingoCellClick.bind(this, "41")}>Slot 16</td>
-                              <td onClick={this.bingoCellClick.bind(this, "42")}>Slot 17</td>
-                              <td onClick={this.bingoCellClick.bind(this, "43")}>Slot 18</td>
-                              <td onClick={this.bingoCellClick.bind(this, "44")}>Slot 19</td>
-                              <td onClick={this.bingoCellClick.bind(this, "45")}>Slot 20</td>
+                              <Tile title="ROW4" />
+                              <Tile title="Slot 16" />
+                              <Tile title="Slot 17" />
+                              <Tile title="Slot 18" />
+                              <Tile title="Slot 19" />
+                              <Tile title="Slot 20" />
                           </tr>
                           <tr>
-                              <td onClick={this.bingoCellClick.bind(this, "row5")}>ROW5</td>
-                              <td onClick={this.bingoCellClick.bind(this, "51")}>Slot 21</td>
-                              <td onClick={this.bingoCellClick.bind(this, "52")}>Slot 22</td>
-                              <td onClick={this.bingoCellClick.bind(this, "53")}>Slot 23</td>
-                              <td onClick={this.bingoCellClick.bind(this, "54")}>Slot 24</td>
-                              <td onClick={this.bingoCellClick.bind(this, "55")}>Slot 25</td>
+                              <Tile title="ROW5" />
+                              <Tile title="Slot 21" />
+                              <Tile title="Slot 22" />
+                              <Tile title="Slot 23" />
+                              <Tile title="Slot 24" />
+                              <Tile title="Slot 25" />
                           </tr>
                           <tr>
-                              <td onClick={this.bingoCellClick.bind(this, "bl-tr")}>BL-TR</td>
+                              <Tile title="BL-TR" />
                           </tr>
                       </tbody>
                   </table>
