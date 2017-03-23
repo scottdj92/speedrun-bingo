@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
 import './board.scss';
+import tableTemplate from './__fixtures__/base-table';
 
-import Tile from '../tile/tile'
+import Tile from '../tile/tile';
+import TileRow from 'Components/tile-row/TileRow';
 
 export default class Board extends Component {
   constructor (props) {
@@ -10,6 +12,7 @@ export default class Board extends Component {
 
     this.state = {
       seed: '',
+      tableHeader: ['', 'COL1', 'COL2', 'COL3', 'COL4', 'COL5']
     };
   }
 
@@ -20,6 +23,22 @@ export default class Board extends Component {
   handleChange(e) {
     console.log(e.target.value);
     this.setState({seed: e.target.value});
+  }
+
+  createHeader() {
+    return this.state.tableHeader.map((col, index) => {
+      return (
+        <Tile title={col} key={index}/>
+      );
+    });
+  }
+
+  createRows() {
+    return tableTemplate.map((row, rowIndex) => {
+      return (
+        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex}/>
+      );
+    });
   }
 
   render () {
@@ -68,55 +87,13 @@ export default class Board extends Component {
               </div>
               <div className="results">
                   <table className="bingo">
+                    <thead>
+                      <tr>
+                        {this.createHeader()}
+                      </tr>
+                    </thead>
                       <tbody>
-                          <tr>
-                              <Tile title="TL-BR" />
-                              <Tile title="COL1" />
-                              <Tile title="COL2" />
-                              <Tile title="COL3" />
-                              <Tile title="COL4" />
-                              <Tile title="COL5" />
-                          </tr>
-                          <tr>
-                              <Tile title="ROW1" />
-                              <Tile title="Slot 1" />
-                              <Tile title="Slot 2" />
-                              <Tile title="Slot 3" />
-                              <Tile title="Slot 4" />
-                              <Tile title="Slot 5" />
-                          </tr>
-                          <tr>
-                              <Tile title="ROW2" />
-                              <Tile title="Slot 6" />
-                              <Tile title="Slot 7" />
-                              <Tile title="Slot 8" />
-                              <Tile title="Slot 9" />
-                              <Tile title="Slot 10" />
-                          </tr>
-                          <tr>
-                              <Tile title="ROW3" />
-                              <Tile title="Slot 11" />
-                              <Tile title="Slot 12" />
-                              <Tile title="Slot 13" />
-                              <Tile title="Slot 14" />
-                              <Tile title="Slot 15" />
-                          </tr>
-                          <tr>
-                              <Tile title="ROW4" />
-                              <Tile title="Slot 16" />
-                              <Tile title="Slot 17" />
-                              <Tile title="Slot 18" />
-                              <Tile title="Slot 19" />
-                              <Tile title="Slot 20" />
-                          </tr>
-                          <tr>
-                              <Tile title="ROW5" />
-                              <Tile title="Slot 21" />
-                              <Tile title="Slot 22" />
-                              <Tile title="Slot 23" />
-                              <Tile title="Slot 24" />
-                              <Tile title="Slot 25" />
-                          </tr>
+                          {this.createRows()}
                           <tr>
                               <Tile title="BL-TR" />
                           </tr>
