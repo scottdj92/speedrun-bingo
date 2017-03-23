@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 
 import './board.scss';
+import tableTemplate from './__fixtures__/base-table';
+
+import Tile from '../tile/tile'
 
 export default class Board extends Component {
-  // constructor () {
-  //   super();
-  // }
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      seed: '',
+    };
+  }
+
+  bingoGenerate() {
+    console.log(this.state.seed);
+  }
+
+  handleChange(e) {
+    console.log(e.target.value);
+    this.setState({seed: e.target.value});
+  }
 
   render () {
     return (
@@ -24,12 +40,12 @@ export default class Board extends Component {
                   <div className="field">
                       <label className="label">Seed</label>
                       <p className="control">
-                          <input className="input" type="text" placeholder="Leave blank for random seed"/>
+                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" value={this.state.seed} onChange={this.handleChange.bind(this)} />
                       </p>
                   </div>
                   <div className="field">
                       <p className="control">
-                          <button className="button is-dark">Generate</button>
+                          <button className="button is-dark" name="generate" onClick={this.bingoGenerate.bind(this)}>Generate</button>
                       </p>
                   </div>
                   <h2 className="title is-3">About Bingo</h2>
@@ -55,55 +71,55 @@ export default class Board extends Component {
                   <table className="bingo">
                       <tbody>
                           <tr>
-                              <td>TL-BR</td>
-                              <td>COL1</td>
-                              <td>COL2</td>
-                              <td>COL3</td>
-                              <td>COL4</td>
-                              <td>COL5</td>
+                              <Tile title="TL-BR" />
+                              <Tile title="COL1" />
+                              <Tile title="COL2" />
+                              <Tile title="COL3" />
+                              <Tile title="COL4" />
+                              <Tile title="COL5" />
                           </tr>
                           <tr>
-                              <td>ROW1</td>
-                              <td>Slot 1</td>
-                              <td>Slot 2</td>
-                              <td>Slot 3</td>
-                              <td>Slot 4</td>
-                              <td>Slot 5</td>
+                              <Tile title="ROW1" />
+                              <Tile title="Slot 1" />
+                              <Tile title="Slot 2" />
+                              <Tile title="Slot 3" />
+                              <Tile title="Slot 4" />
+                              <Tile title="Slot 5" />
                           </tr>
                           <tr>
-                              <td>ROW2</td>
-                              <td className="greensquare">Slot 6</td>
-                              <td>Slot 7</td>
-                              <td>Slot 8</td>
-                              <td>Slot 9</td>
-                              <td>Slot 10</td>
+                              <Tile title="ROW2" />
+                              <Tile title="Slot 6" />
+                              <Tile title="Slot 7" />
+                              <Tile title="Slot 8" />
+                              <Tile title="Slot 9" />
+                              <Tile title="Slot 10" />
                           </tr>
                           <tr>
-                              <td>ROW3</td>
-                              <td>Slot 11</td>
-                              <td>Slot 12</td>
-                              <td>Slot 13</td>
-                              <td>Slot 14</td>
-                              <td>Slot 15</td>
+                              <Tile title="ROW3" />
+                              <Tile title="Slot 11" />
+                              <Tile title="Slot 12" />
+                              <Tile title="Slot 13" />
+                              <Tile title="Slot 14" />
+                              <Tile title="Slot 15" />
                           </tr>
                           <tr>
-                              <td>ROW4</td>
-                              <td>Slot 16</td>
-                              <td>Slot 17</td>
-                              <td>Slot 18</td>
-                              <td>Slot 19</td>
-                              <td>Slot 20</td>
+                              <Tile title="ROW4" />
+                              <Tile title="Slot 16" />
+                              <Tile title="Slot 17" />
+                              <Tile title="Slot 18" />
+                              <Tile title="Slot 19" />
+                              <Tile title="Slot 20" />
                           </tr>
                           <tr>
-                              <td>ROW5</td>
-                              <td>Slot 21</td>
-                              <td>Slot 22</td>
-                              <td>Slot 23</td>
-                              <td>Slot 24</td>
-                              <td>Slot 25</td>
+                              <Tile title="ROW5" />
+                              <Tile title="Slot 21" />
+                              <Tile title="Slot 22" />
+                              <Tile title="Slot 23" />
+                              <Tile title="Slot 24" />
+                              <Tile title="Slot 25" />
                           </tr>
                           <tr>
-                              <td>BL-TR</td>
+                              <Tile title="BL-TR" />
                           </tr>
                       </tbody>
                   </table>
