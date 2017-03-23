@@ -3,23 +3,24 @@ import React, { Component } from 'react';
 import './board.scss';
 
 import Tile from '../tile/tile'
+import SeedRandom from 'seedrandom';
 
 export default class Board extends Component {
   constructor (props) {
     super(props);
 
     this.state = {
-      seed: '',
+      seed: Math.ceil(999999 * Math.random()),
+      newSeed: '',
     };
   }
 
-  bingoGenerate() {
-    console.log(this.state.seed);
+  seedPage() {
+    this.setState({seed: this.state.newSeed == '' ? Math.ceil(999999 * Math.random()) : this.state.newSeed});
   }
 
   handleChange(e) {
-    console.log(e.target.value);
-    this.setState({seed: e.target.value});
+    this.setState({newSeed: e.target.value});
   }
 
   render () {
@@ -33,18 +34,18 @@ export default class Board extends Component {
                           Create a new card based on seed.
                       </p>
                       <p>
-                          The seed is used to generate the board. Changing the seed will make a new board.
+                          The seed is used to generate the card. Changing the seed will make a new card.
                       </p>
                   </div>
                   <div className="field">
                       <label className="label">Seed</label>
                       <p className="control">
-                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" value={this.state.seed} onChange={this.handleChange.bind(this)} />
+                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" onChange={this.handleChange.bind(this)} />
                       </p>
                   </div>
                   <div className="field">
                       <p className="control">
-                          <button className="button is-dark" name="generate" onClick={this.bingoGenerate.bind(this)}>Generate</button>
+                          <button className="button is-dark" name="generate" onClick={this.seedPage.bind(this)}>Generate</button>
                       </p>
                   </div>
                   <h2 className="title is-3">About Bingo</h2>
@@ -59,11 +60,11 @@ export default class Board extends Component {
                   <h2 className="title is-3">Bingo Rules</h2>
                   <div className="content">
                       <p>
-                          No rules in place yet.
-                          <ul>
-                              <li></li>
-                          </ul>
+                        No rules in place yet.
                       </p>
+                      <ul>
+                          <li></li>
+                      </ul>
                   </div>
               </div>
               <div className="results">
@@ -122,7 +123,7 @@ export default class Board extends Component {
                           </tr>
                       </tbody>
                   </table>
-                  <p>Seed: <strong>1337</strong>&emsp;Card Type: <strong>Totally normal</strong></p>
+                  <p>Seed: <strong>{this.state.seed}</strong>&emsp;Card Type: <strong>Totally normal</strong></p>
               </div>
           </div>
       </div>
