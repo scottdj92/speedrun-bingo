@@ -21,33 +21,35 @@ export default class Board extends Component {
         ['Slot 21', 'Slot 22', 'Slot 23', 'Slot 24', 'Slot 25'],
       ]
     };
-
-    let rng = SeedRandom(this.state.seed);
-    console.log(Tasks.length);
-    console.log(Math.floor(Tasks.length * rng()));
-    console.log(Math.floor(Tasks.length * rng()));
-    console.log(Math.floor(Tasks.length * rng()));
-    console.log(Math.floor(Tasks.length * rng()));
   }
 
   seedPage() {
     this.setState({seed: this.state.newSeed == '' ? Math.ceil(999999 * Math.random()) : this.state.newSeed});
+    this.populateBoard();
   }
 
   handleChange(e) {
     this.setState({newSeed: e.target.value});
   }
 
-  componentDidMount() {
-    let rng = SeedRandom(this.state.seed);
+  populateBoard() {
     let newBoard = this.state.board;
-    for (var r = 0; r < 5; r++) {
-      for (var c = 0; c < 5; c++) {
-        newBoard[r][c] = Tasks[Math.floor(Tasks.length * rng())].task;
+    let rng = SeedRandom(this.state.seed);
+    let tasks = JSON.parse(JSON.stringify(Tasks));
+
+    for (var row = 0; row < 5; row++) {
+      for (var col = 0; col < 5; col++) {
+        let number = Math.floor(tasks.length * rng());
+        newBoard[row][col] = tasks[number].task;
+        delete tasks[number].task;
       }
     }
 
     this.setState({board: newBoard});
+  }
+
+  componentDidMount() {
+    this.populateBoard();
   }
 
   render () {
