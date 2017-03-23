@@ -4,6 +4,7 @@ import './board.scss';
 
 import Tile from '../tile/tile'
 import SeedRandom from 'seedrandom';
+import Tasks from '../../data/tasks.json';
 
 export default class Board extends Component {
   constructor (props) {
@@ -12,7 +13,21 @@ export default class Board extends Component {
     this.state = {
       seed: Math.ceil(999999 * Math.random()),
       newSeed: '',
+      board: [
+        ['Slot 1',  'Slot 2',  'Slot 3',  'Slot 4',  'Slot 5'],
+        ['Slot 6',  'Slot 7',  'Slot 8',  'Slot 9',  'Slot 10'],
+        ['Slot 11', 'Slot 12', 'Slot 13', 'Slot 14', 'Slot 15'],
+        ['Slot 16', 'Slot 17', 'Slot 18', 'Slot 19', 'Slot 20'],
+        ['Slot 21', 'Slot 22', 'Slot 23', 'Slot 24', 'Slot 25'],
+      ]
     };
+
+    let rng = SeedRandom(this.state.seed);
+    console.log(Tasks.length);
+    console.log(Math.floor(Tasks.length * rng()));
+    console.log(Math.floor(Tasks.length * rng()));
+    console.log(Math.floor(Tasks.length * rng()));
+    console.log(Math.floor(Tasks.length * rng()));
   }
 
   seedPage() {
@@ -21,6 +36,18 @@ export default class Board extends Component {
 
   handleChange(e) {
     this.setState({newSeed: e.target.value});
+  }
+
+  componentDidMount() {
+    let rng = SeedRandom(this.state.seed);
+    let newBoard = this.state.board;
+    for (var r = 0; r < 5; r++) {
+      for (var c = 0; c < 5; c++) {
+        newBoard[r][c] = Tasks[Math.floor(Tasks.length * rng())].task;
+      }
+    }
+
+    this.setState({board: newBoard});
   }
 
   render () {
@@ -80,43 +107,43 @@ export default class Board extends Component {
                           </tr>
                           <tr>
                               <Tile title="ROW1" />
-                              <Tile title="Slot 1" />
-                              <Tile title="Slot 2" />
-                              <Tile title="Slot 3" />
-                              <Tile title="Slot 4" />
-                              <Tile title="Slot 5" />
+                              <Tile title={this.state.board[0][0]}/>
+                              <Tile title={this.state.board[0][1]} />
+                              <Tile title={this.state.board[0][2]} />
+                              <Tile title={this.state.board[0][3]} />
+                              <Tile title={this.state.board[0][4]} />
                           </tr>
                           <tr>
                               <Tile title="ROW2" />
-                              <Tile title="Slot 6" />
-                              <Tile title="Slot 7" />
-                              <Tile title="Slot 8" />
-                              <Tile title="Slot 9" />
-                              <Tile title="Slot 10" />
+                              <Tile title={this.state.board[1][0]}/>
+                              <Tile title={this.state.board[1][1]} />
+                              <Tile title={this.state.board[1][2]} />
+                              <Tile title={this.state.board[1][3]} />
+                              <Tile title={this.state.board[1][4]} />
                           </tr>
                           <tr>
                               <Tile title="ROW3" />
-                              <Tile title="Slot 11" />
-                              <Tile title="Slot 12" />
-                              <Tile title="Slot 13" />
-                              <Tile title="Slot 14" />
-                              <Tile title="Slot 15" />
+                              <Tile title={this.state.board[2][0]}/>
+                              <Tile title={this.state.board[2][1]} />
+                              <Tile title={this.state.board[2][2]} />
+                              <Tile title={this.state.board[2][3]} />
+                              <Tile title={this.state.board[2][4]} />
                           </tr>
                           <tr>
                               <Tile title="ROW4" />
-                              <Tile title="Slot 16" />
-                              <Tile title="Slot 17" />
-                              <Tile title="Slot 18" />
-                              <Tile title="Slot 19" />
-                              <Tile title="Slot 20" />
+                              <Tile title={this.state.board[3][0]}/>
+                              <Tile title={this.state.board[3][1]} />
+                              <Tile title={this.state.board[3][2]} />
+                              <Tile title={this.state.board[3][3]} />
+                              <Tile title={this.state.board[3][4]} />
                           </tr>
                           <tr>
                               <Tile title="ROW5" />
-                              <Tile title="Slot 21" />
-                              <Tile title="Slot 22" />
-                              <Tile title="Slot 23" />
-                              <Tile title="Slot 24" />
-                              <Tile title="Slot 25" />
+                              <Tile title={this.state.board[4][0]}/>
+                              <Tile title={this.state.board[4][1]} />
+                              <Tile title={this.state.board[4][2]} />
+                              <Tile title={this.state.board[4][3]} />
+                              <Tile title={this.state.board[4][4]} />
                           </tr>
                           <tr>
                               <Tile title="BL-TR" />
