@@ -14,7 +14,6 @@ export default class Tile extends Component {
   }
 
   render () {
-    if this.state
     return (
       <td onClick={this.handleChange.bind(this)} className={this.state.completed ? "complete" : '' }>{this.props.title}</td>
     );

@@ -11,6 +11,7 @@ export default class Board extends Component {
 
     this.state = {
       seed: '',
+      tableHeader: ['', 'COL1', 'COL2', 'COL3', 'COL4', 'COL5']
     };
   }
 
@@ -21,6 +22,14 @@ export default class Board extends Component {
   handleChange(e) {
     console.log(e.target.value);
     this.setState({seed: e.target.value});
+  }
+
+  createHeader() {
+    return this.state.tableHeader.map((col, index) => {
+      return (
+        <Tile title={col} key={index}/>
+      );
+    });
   }
 
   render () {
@@ -69,15 +78,12 @@ export default class Board extends Component {
               </div>
               <div className="results">
                   <table className="bingo">
+                    <thead>
+                      <tr>
+                        {this.createHeader()}
+                      </tr>
+                    </thead>
                       <tbody>
-                          <tr>
-                              <Tile title="TL-BR" />
-                              <Tile title="COL1" />
-                              <Tile title="COL2" />
-                              <Tile title="COL3" />
-                              <Tile title="COL4" />
-                              <Tile title="COL5" />
-                          </tr>
                           <tr>
                               <Tile title="ROW1" />
                               <Tile title="Slot 1" />

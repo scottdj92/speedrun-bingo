@@ -1,99 +1,101 @@
 @import "../../../_vars";
 
 .container {
-    margin: 0 auto;
-    overflow: auto;
-    padding: 8px -10px 16px 16px;
-    width: 976px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 8px -10px 16px 16px;
+  width: 976px;
 }
 
 .bingoPage {
-    .results {
-        float: left;
-        margin-right: 16px;
-        text-align: right;
-        width: 594px;
+  .results {
+    float: left;
+    margin-right: 16px;
+    text-align: right;
+    width: 594px;
+  }
+
+  .about {
+    float: right;
+    width: 365px;
+    .bingoButton {
+      font-weight: bold;
+      color: white;
+      margin-left: 6px;
+      margin-right: 2px;
+      text-decoration: none;
+      padding: 4px 18px;
+      text-align: center;
+      border-radius: 15px;
+      border-left: 2px solid black;
+      border-right: 2px solid black;
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      background-color: black;
+      background: black;
     }
+  }
 
-    .about {
-        .bingoButton {
-            font-weight: bold;
-            color: white;
-            margin-left: 6px;
-            margin-right: 2px;
-            text-decoration: none;
-            padding: 4px 18px;
-            text-align: center;
-            border-radius: 15px;
-            border-left: 2px solid black;
-            border-right: 2px solid black;
-            border-top: 2px solid black;
-            border-bottom: 2px solid black;
-            background-color: black;
-            background: black;
-        }
-
-        float: right;
-        width: 365px;
+  .bingo {
+    thead {
+      td {
+        height: 30px;
+        border: 1px solid $header-border-color;
+        text-align: center;
+        vertical-align: middle;
+        background-color: $header-bg;
+      }
     }
-
-    .bingo {
-        tr {
-            &:first-child,
-            &:last-child {
-                td {
-                    background: $header-bg;
-                    border: 1px $header-border-color solid;
-                    color: $header-color;
-                    font-size: 75%;
-                    font-weight: 700;
-                    height: 30px;
-
-                    &:hover {
-                        background: $header-bg-hover;
-                        color: $header-color-hover;
-                    }
-                }
+    tbody {
+      tr {
+        &:last-child {
+          td {
+            background: $header-bg;
+            border: 1px $header-border-color solid;
+            color: $header-color;
+            font-size: 75%;
+            font-weight: 700;
+            height: 30px;
+            &:hover {
+              background: $header-bg-hover;
+              color: $header-color-hover;
             }
-
-            td {
-                &:first-child {
-                    &:hover {
-                        background: $header-bg-hover;
-                        color: $header-color-hover;
-                    }
-
-                    background: $header-bg;
-                    border: 1px $header-border-color solid;
-                    color: $header-color;
-                    font-size: 75%;
-                    font-weight: 700;
-                    width: 35px;
-                }
-
-                &:hover {
-                    background: $milestone-bg-hover;
-                    color: $milestone-color-hover;
-                }
-
-                &.greensquare {
-                    &:hover {
-                        background: $milestone-completed-bg-hover;
-                    }
-
-                    background: $milestone-completed-bg;
-                }
-
-                background: $milestone-bg;
-                color: $milestone-color;
-                border: 1px $milestone-border-color solid;
-                height: 90px;
-                padding: 0px 5px;
-                text-align: center;
-                vertical-align: middle;
-                width: 95px;
-                max-width: 95px;
-            }
+          }
         }
+        td {
+          background: $milestone-bg;
+          color: $milestone-color;
+          border: 1px $milestone-border-color solid;
+          height: 90px;
+          padding: 0px 5px;
+          text-align: center;
+          vertical-align: middle;
+          width: 95px;
+          max-width: 95px;
+          &:hover {
+            background: $milestone-bg-hover;
+            color: $milestone-color-hover;
+          }
+          &.greensquare {
+              background: $milestone-completed-bg;
+              &:hover {
+                  background: $milestone-completed-bg-hover;
+              }
+          }
+          &:first-child {
+            background: $header-bg;
+            border: 1px $header-border-color solid;
+            color: $header-color;
+            font-size: 75%;
+            font-weight: 700;
+            width: 35px;
+            &:hover {
+              background: $header-bg-hover;
+              color: $header-color-hover;
+            }
+          }
+        }
+      }
     }
+  }
 }
