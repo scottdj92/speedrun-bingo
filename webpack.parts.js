@@ -5,11 +5,12 @@ exports.devServer = function (options) {
   return {
     devServer: {
       historyApiFallback: true,
-      stats: 'errors-only',
       host: process.env.HOST,
       port: process.env.PORT,
       hot: true,
-      stats: 'errors-only',
+      stats: {
+        normal: true
+      },
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin({})
