@@ -20,7 +20,7 @@ const common = merge([
       filename: 'bundle.js'
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.scss'],
+      extensions: ['.js', '.jsx', '.scss', '.json'],
       alias: {
         Components: path.resolve(__dirname, 'src/app/components/'),
         SassVariables: path.resolve(__dirname, 'src/_vars.scss')

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
 import './board.scss';
+import tableTemplate from './__fixtures__/base-table';
+
 
 import Tile from '../tile/tile'
 import SeedRandom from 'seedrandom';
 import Tasks from '../../data/tasks.json';
+
 
 export default class Board extends Component {
   constructor (props) {
@@ -50,6 +53,22 @@ export default class Board extends Component {
 
   componentDidMount() {
     this.populateBoard();
+  }
+
+  createHeader() {
+    return this.state.tableHeader.map((col, index) => {
+      return (
+        <Tile title={col} key={index}/>
+      );
+    });
+  }
+
+  createRows() {
+    return tableTemplate.map((row, rowIndex) => {
+      return (
+        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex}/>
+      );
+    });
   }
 
   render () {
@@ -98,6 +117,11 @@ export default class Board extends Component {
               </div>
               <div className="results">
                   <table className="bingo">
+                    <thead>
+                      <tr>
+                        {this.createHeader()}
+                      </tr>
+                    </thead>
                       <tbody>
                           <tr>
                               <Tile title="TL-BR" />
