@@ -4,7 +4,6 @@ import R from 'ramda';
 import seedRandom from 'seedrandom';
 
 import './board.scss';
-import tableTemplate from './__fixtures__/base-table';
 
 import Tile from '../tile/tile';
 import TileRow from 'Components/tile-row/TileRow';
@@ -17,7 +16,7 @@ export default class Board extends Component {
       seed: Math.ceil(999999999 * Math.random()),
       possibleSeed: null,
       tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
-      board: tableTemplate,
+      board: this.props.tiles,
       cardType: 'normal'
     };
   }
@@ -31,7 +30,7 @@ export default class Board extends Component {
       seed = Math.ceil(9999999 * Math.random());
     }
     let rng = seedRandom(seed);
-    let template = tableTemplate;
+    let template = this.props.tiles;
     let newBoard = [];
     let selectedMilestone;
 

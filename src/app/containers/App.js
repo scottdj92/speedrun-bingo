@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+
+import { connect } from 'react-redux';
 
 // import styles
 import './_main.scss';
@@ -8,7 +9,7 @@ import './_main.scss';
 import Header from 'Components/header/header';
 import Board from 'Components/board/board';
 
-export default class App extends Component {
+class App extends Component {
   constructor () {
     super();
   }
@@ -17,8 +18,16 @@ export default class App extends Component {
     return (
       <div>
         <Header/>
-        <Board/>
+        <Board tiles={this.props.tiles}/>
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    tiles: state.tiles
+  };
+}
+
+export default connect(mapStateToProps)(App);
