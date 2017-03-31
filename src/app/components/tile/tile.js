@@ -11,6 +11,10 @@ export default class Tile extends Component {
 
   handleChange(e) {
     this.setState({completed: true});
+
+    if (this.state.completed) {
+      this.setState({completed: false});
+    }
   }
 
   render () {
