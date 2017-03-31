@@ -1,26 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './app/containers/App';
+import { Provider } from 'react-redux';
+import configureStore from './app/store/configureStore';
 
-// import styles
-import './_main.scss';
+const store = configureStore();
 
-// import components here
-import Header from 'Components/header/header';
-import Board from 'Components/board/board';
-
-class App extends Component {
-  constructor () {
-    super();
-  }
-
-  render () {
-    return (
-      <div>
-        <Header/>
-        <Board/>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App/>, document.getElementById('main'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  document.getElementById('main'));
