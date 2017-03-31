@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import R from 'ramda';
+
+import seedRandom from 'seedrandom';
 
 import './board.scss';
 import tableTemplate from './__fixtures__/base-table';
@@ -11,18 +14,46 @@ export default class Board extends Component {
     super(props);
 
     this.state = {
-      seed: '',
-      tableHeader: ['', 'COL1', 'COL2', 'COL3', 'COL4', 'COL5']
+      seed: Math.ceil(999999999 * Math.random()),
+      possibleSeed: null,
+      tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
+      board: tableTemplate,
+      cardType: 'normal'
     };
   }
 
-  bingoGenerate() {
-    console.log(this.state.seed);
+  componentDidMount() {
+    this.populate(this.state.seed);
+  }
+
+  populate(seed) {
+    let rng = seedRandom(seed);
+    let template = tableTemplate;
+    let newBoard = [];
+    let selectedMilestone;
+
+    template.map(() => {
+      selectedMilestone = template[Math.floor(template.length * rng())];
+      newBoard.push(selectedMilestone);
+      template = template.filter((elem) => {
+        if (template.length > 1) {
+          return elem !== selectedMilestone;
+        } else {
+          return elem;
+        }
+      });
+    });
+
+    this.setState({board: newBoard});
   }
 
   handleChange(e) {
-    console.log(e.target.value);
-    this.setState({seed: e.target.value});
+    this.setState({possibleSeed: parseInt(e.target.value)});
+  }
+
+  generateNewSeed() {
+    this.setState({seed: this.state.possibleSeed});
+    this.populate(this.state.possibleSeed);
   }
 
   createHeader() {
@@ -34,7 +65,7 @@ export default class Board extends Component {
   }
 
   createRows() {
-    return tableTemplate.map((row, rowIndex) => {
+    return R.splitEvery(5, this.state.board).map((row, rowIndex) => {
       return (
         <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex}/>
       );
@@ -58,12 +89,12 @@ export default class Board extends Component {
                   <div className="field">
                       <label className="label">Seed</label>
                       <p className="control">
-                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" value={this.state.seed} onChange={this.handleChange.bind(this)} />
+                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" onChange={this.handleChange.bind(this)}/>
                       </p>
                   </div>
                   <div className="field">
                       <p className="control">
-                          <button className="button is-dark" name="generate" onClick={this.bingoGenerate.bind(this)}>Generate</button>
+                          <button className="button is-dark" name="generate" onClick={this.generateNewSeed.bind(this)}>Generate</button>
                       </p>
                   </div>
                   <h2 className="title is-3">About Bingo</h2>
@@ -77,12 +108,7 @@ export default class Board extends Component {
                   </div>
                   <h2 className="title is-3">Bingo Rules</h2>
                   <div className="content">
-                      <p>
-                          No rules in place yet.
-                          <ul>
-                              <li></li>
-                          </ul>
-                      </p>
+                    No rules in place yet.
                   </div>
               </div>
               <div className="results">
@@ -99,7 +125,7 @@ export default class Board extends Component {
                           </tr>
                       </tbody>
                   </table>
-                  <p>Seed: <strong>1337</strong>&emsp;Card Type: <strong>Totally normal</strong></p>
+                  <p>Seed: <strong>{this.state.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
               </div>
           </div>
       </div>
