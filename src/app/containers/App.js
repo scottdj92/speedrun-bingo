@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as Actions from '../actions';
 
 // import styles
 import './_main.scss';
@@ -18,7 +20,7 @@ class App extends Component {
     return (
       <div>
         <Header/>
-        <Board tiles={this.props.tiles}/>
+        <Board actions={this.props.actions} data={this.props.tiles}/>
       </div>
     );
   }
@@ -30,4 +32,10 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(Actions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

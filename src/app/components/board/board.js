@@ -13,41 +13,14 @@ export default class Board extends Component {
     super(props);
 
     this.state = {
-      seed: Math.ceil(999999999 * Math.random()),
       possibleSeed: null,
       tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
-      board: this.props.tiles,
       cardType: 'normal'
     };
   }
 
   componentDidMount() {
-    this.populate(this.state.seed);
-  }
-
-  populate(seed) {
-    if (seed === null) {
-      seed = Math.ceil(9999999 * Math.random());
-    }
-    let rng = seedRandom(seed);
-    let template = this.props.tiles;
-    let newBoard = [];
-    let selectedMilestone;
-
-    template.map(() => {
-      selectedMilestone = template[Math.floor(template.length * rng())];
-      selectedMilestone.complete = false;
-      newBoard.push(selectedMilestone);
-      template = template.filter((elem) => {
-        if (template.length > 1) {
-          return elem !== selectedMilestone;
-        } else {
-          return elem;
-        }
-      });
-    });
-
-    this.setState({board: newBoard, seed: seed});
+    console.log(this);
   }
 
   handleChange(e) {
@@ -55,12 +28,10 @@ export default class Board extends Component {
   }
 
   generateNewSeed() {
-    if (this.state.possibleSeed === '') {
-      this.setState({seed: null});
-      this.setState(this.state.seed)
+    if (this.state.possibleSeed === null) {
+      this.props.actions.generateRandomSeed();
     } else {
-      this.setState({seed: this.state.possibleSeed});
-      this.populate(this.state.possibleSeed);
+      this.props.actions.applySeed(this.state.possibleSeed);
     }
   }
 
@@ -72,20 +43,10 @@ export default class Board extends Component {
     });
   }
 
-  updateTile(e) {
-    // REALLY HACKY WAY TO GET THIS WORKING.
-    // Look into Redux to handle state changes better.
-    if (e.target.className === 'complete') {
-      e.target.className = '';
-    } else {
-      e.target.className='complete';
-    }
-  }
-
   createRows() {
-    return R.splitEvery(5, this.state.board).map((row, rowIndex) => {
+    return R.splitEvery(5, this.props.data.tiles).map((row, rowIndex) => {
       return (
-        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex} update={this.updateTile.bind(this)}/>
+        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex} actions={this.props.actions}/>
       );
     });
   }
@@ -151,7 +112,7 @@ export default class Board extends Component {
                           </tr>
                       </tbody>
                   </table>
-                  <p>Seed: <strong>{this.state.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
+                  <p>Seed: <strong>{this.props.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
               </div>
           </div>
       </div>
