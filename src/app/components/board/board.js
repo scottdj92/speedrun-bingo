@@ -15,7 +15,7 @@ export default class Board extends Component {
 
     this.state = {
       seed: Math.ceil(999999999 * Math.random()),
-      possibleSeed: '',
+      possibleSeed: null,
       tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
       board: tableTemplate,
       cardType: 'normal'
@@ -23,7 +23,11 @@ export default class Board extends Component {
   }
 
   componentDidMount() {
-    let rng = seedRandom(this.state.seed);
+    this.populate(this.state.seed);
+  }
+
+  populate(seed) {
+    let rng = seedRandom(seed);
     let template = tableTemplate;
     let newBoard = [];
     let selectedMilestone;
@@ -44,11 +48,12 @@ export default class Board extends Component {
   }
 
   handleChange(e) {
-    this.setState({possibleSeed: e.target.value});
+    this.setState({possibleSeed: parseInt(e.target.value)});
   }
 
-  generateNewSeed(e) {
-    this.setState({seed: e.target.value});
+  generateNewSeed() {
+    this.setState({seed: this.state.possibleSeed});
+    this.populate(this.state.possibleSeed);
   }
 
   createHeader() {
@@ -84,7 +89,7 @@ export default class Board extends Component {
                   <div className="field">
                       <label className="label">Seed</label>
                       <p className="control">
-                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" />
+                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" onChange={this.handleChange.bind(this)}/>
                       </p>
                   </div>
                   <div className="field">
