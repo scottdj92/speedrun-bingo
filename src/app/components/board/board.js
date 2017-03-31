@@ -27,6 +27,9 @@ export default class Board extends Component {
   }
 
   populate(seed) {
+    if (seed === null) {
+      seed = Math.ceil(9999999 * Math.random());
+    }
     let rng = seedRandom(seed);
     let template = tableTemplate;
     let newBoard = [];
@@ -44,7 +47,7 @@ export default class Board extends Component {
       });
     });
 
-    this.setState({board: newBoard});
+    this.setState({board: newBoard, seed: seed});
   }
 
   handleChange(e) {
@@ -52,8 +55,13 @@ export default class Board extends Component {
   }
 
   generateNewSeed() {
-    this.setState({seed: this.state.possibleSeed});
-    this.populate(this.state.possibleSeed);
+    if (this.state.possibleSeed === '') {
+      this.setState({seed: null});
+      this.setState(this.state.seed)
+    } else {
+      this.setState({seed: this.state.possibleSeed});
+      this.populate(this.state.possibleSeed);
+    }
   }
 
   createHeader() {
