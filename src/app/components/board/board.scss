@@ -76,11 +76,8 @@
             background: $milestone-bg-hover;
             color: $milestone-color-hover;
           }
-          &.greensquare {
+          &.complete {
               background: $milestone-completed-bg;
-              &:hover {
-                  background: $milestone-completed-bg-hover;
-              }
           }
           &:first-child {
             background: $header-bg;
