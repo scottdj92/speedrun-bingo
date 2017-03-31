@@ -89,7 +89,7 @@ export default class Board extends Component {
                   <div className="field">
                       <label className="label">Seed</label>
                       <p className="control">
-                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" onChange={this.handleChange.bind(this)}/>
+                          <input className="input" type="number" name="seed" placeholder="Leave blank for random seed" onChange={this.handleChange.bind(this)}/>
                       </p>
                   </div>
                   <div className="field">
