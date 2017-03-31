@@ -108,7 +108,15 @@ export default class Board extends Component {
                   </div>
                   <h2 className="title is-3">Bingo Rules</h2>
                   <div className="content">
-                    No rules in place yet.
+                    <p>
+                      There are some specific rules in place:
+                    </p>
+                    <ul>
+                      <li>If it says to have an item, you must actually keep it. For example, if it says to have '<strong>20 arrows</strong>', you must still have it in your inventory at the time you finish getting all 5 objectives.</li>
+                      <li>To beat a shrine, you are 'finished' when you recieve a spirit orb at end of the trial. </li>
+                      <li>To beat a divine beast, you are 'finished' when you interact with main control unit.</li>
+                      <li>For collection goals such as '<strong>8 hearts</strong>', '<strong>2 wheels of stamina</strong>', etc, you're allowed to exceed the required amount.</li>
+                    </ul>
                   </div>
               </div>
               <div className="results">
