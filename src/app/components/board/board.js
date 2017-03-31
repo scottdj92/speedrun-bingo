@@ -15,7 +15,8 @@ export default class Board extends Component {
 
     this.state = {
       seed: Math.ceil(999999999 * Math.random()),
-      tableHeader: ['', 'COL1', 'COL2', 'COL3', 'COL4', 'COL5'],
+      possibleSeed: '',
+      tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
       board: tableTemplate,
       cardType: 'normal'
     };
@@ -23,34 +24,31 @@ export default class Board extends Component {
 
   componentDidMount() {
     let rng = seedRandom(this.state.seed);
+    let template = tableTemplate;
     let newBoard = [];
     let selectedMilestone;
 
-    R.splitEvery(5, this.state.board).map((row) => {
-      row.map((col) => {
-        selectedMilestone = tableTemplate[Math.floor(tableTemplate.length * rng())];
-        //make new board with selected milestone removed
-        newBoard.push.apply( newBoard,
-            tableTemplate.filter((elem) => {
-              return elem === selectedMilestone;
-            })
-          );
-        console.log(tableTemplate.indexOf(selectedMilestone));
-        delete tableTemplate[tableTemplate.indexOf(selectedMilestone)];
+    template.map(() => {
+      selectedMilestone = template[Math.floor(template.length * rng())];
+      newBoard.push(selectedMilestone);
+      template = template.filter((elem) => {
+        if (template.length > 1) {
+          return elem !== selectedMilestone;
+        } else {
+          return elem;
+        }
       });
     });
-
-    console.log(newBoard);
 
     this.setState({board: newBoard});
   }
 
   handleChange(e) {
-    this.setState({seed: e.target.value});
+    this.setState({possibleSeed: e.target.value});
   }
 
-  generateNewSeed() {
-    console.log(this.state.seed);
+  generateNewSeed(e) {
+    this.setState({seed: e.target.value});
   }
 
   createHeader() {
@@ -86,7 +84,7 @@ export default class Board extends Component {
                   <div className="field">
                       <label className="label">Seed</label>
                       <p className="control">
-                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" onChange={this.handleChange.bind(this)} />
+                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" />
                       </p>
                   </div>
                   <div className="field">
