@@ -37,6 +37,7 @@ export default class Board extends Component {
 
     template.map(() => {
       selectedMilestone = template[Math.floor(template.length * rng())];
+      selectedMilestone.complete = false;
       newBoard.push(selectedMilestone);
       template = template.filter((elem) => {
         if (template.length > 1) {
@@ -72,10 +73,20 @@ export default class Board extends Component {
     });
   }
 
+  updateTile(e) {
+    // REALLY HACKY WAY TO GET THIS WORKING.
+    // Look into Redux to handle state changes better.
+    if (e.target.className === 'complete') {
+      e.target.className = '';
+    } else {
+      e.target.className='complete';
+    }
+  }
+
   createRows() {
     return R.splitEvery(5, this.state.board).map((row, rowIndex) => {
       return (
-        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex}/>
+        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex} update={this.updateTile.bind(this)}/>
       );
     });
   }
