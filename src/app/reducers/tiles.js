@@ -40,22 +40,17 @@ export default function tiles(state = initialState, action) {
 }
 
 function scramble(milestones) {
-  return allMilestones;
+  return populate(initialSeed);
 }
 
 function populate(seed) {
-  if (seed === null) {
-    seed = Math.ceil(9999999 * Math.random());
-  }
-  let rng = seed;
-  let template = this.props.data.tiles;
-  let newBoard = [];
-  let selectedMilestone;
+  let rng = seed();
+  let template = allMilestones;
+  let selectedMilestone, scrambledBoard = [];
 
   template.map(() => {
     selectedMilestone = template[Math.floor(template.length * rng)];
-    selectedMilestone.complete = false;
-    newBoard.push(selectedMilestone);
+    scrambledBoard.push(selectedMilestone);
     template = template.filter((elem) => {
       if (template.length > 1) {
         return elem !== selectedMilestone;
@@ -64,4 +59,6 @@ function populate(seed) {
       }
     });
   });
+
+  return scrambledBoard;
 }
