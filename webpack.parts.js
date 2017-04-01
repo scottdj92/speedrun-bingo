@@ -18,7 +18,7 @@ exports.devServer = function (options) {
   };
 };
 
-exports.loadJavascript= function(paths) {
+exports.loadJavascript = function(paths) {
   return {
     module: {
       rules: [
@@ -27,8 +27,7 @@ exports.loadJavascript= function(paths) {
           include: paths,
           loader: 'babel-loader',
           query: {
-            cacheDirectory: true,
-            presets: ['react', 'env']
+            cacheDirectory: true
           }
         }
       ]

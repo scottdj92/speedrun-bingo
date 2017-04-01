@@ -52,7 +52,6 @@ export default class Board extends Component {
   }
 
   render () {
-    console.log(this);
     return (
       <div className="container">
           <div className="bingoPage">

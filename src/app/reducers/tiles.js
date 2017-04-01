@@ -20,23 +20,27 @@ export default function tiles(state = initialState, action) {
   console.log(state);
   switch (action.type) {
     case COMPLETE_MILESTONE:
-      return Object.assign({}, state, {
-        id: action.id,
-        //TODO: figure out how to flip toggle selected mileston
-      });
+      state.tiles[action.id].complete = true;
+      return {
+        ...state,
+        id: action.id
+      }
     case UNDO_MILESTONE:
-      return Object.assign({}, state, {
-        id: action.id,
-        complete: action.complete
-      });
+      state.tiles[action.id].complete = false;
+      return {
+        ...state,
+        id: action.id
+      }
     case GENERATE_RANDOM_SEED:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         seed: (99999999 * Math.random())
-      });
+      }
     case APPLY_SEED:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         seed: action.seed
-      });
+      }
     default:
       return state;
   }
