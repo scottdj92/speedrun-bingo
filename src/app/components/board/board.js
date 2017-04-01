@@ -20,7 +20,7 @@ export default class Board extends Component {
   }
 
   componentDidMount() {
-    console.log(this);
+
   }
 
   handleChange(e) {
@@ -38,7 +38,7 @@ export default class Board extends Component {
   createHeader() {
     return this.state.tableHeader.map((col, index) => {
       return (
-        <Tile title={col} key={index}/>
+        <Tile data={{title: col}} key={index}/>
       );
     });
   }
@@ -52,6 +52,7 @@ export default class Board extends Component {
   }
 
   render () {
+    console.log(this);
     return (
       <div className="container">
           <div className="bingoPage">
@@ -108,11 +109,11 @@ export default class Board extends Component {
                       <tbody>
                           {this.createRows()}
                           <tr>
-                              <Tile title="BL-TR" />
+                              <Tile data={{title:"BL-TR", complete: false}} />
                           </tr>
                       </tbody>
                   </table>
-                  <p>Seed: <strong>{this.props.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
+                  <p>Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
               </div>
           </div>
       </div>

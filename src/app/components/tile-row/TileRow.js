@@ -10,7 +10,7 @@ export default class TileRow extends Component {
   createTiles () {
     return this.props.tiles.map((tile, index) => {
       return (
-        <Tile actions={this.props.actions} title={tile.title} key={index}/>
+        <Tile actions={this.props.actions} data={tile} key={index}/>
       );
     });
   }
@@ -18,7 +18,7 @@ export default class TileRow extends Component {
   render () {
     return (
       <tr>
-        <Tile title={'ROW ' + this.props.rowIndex} />
+        <Tile data={{title: 'ROW ' + this.props.rowIndex, complete: false}}/>
         {this.createTiles()}
       </tr>
     )

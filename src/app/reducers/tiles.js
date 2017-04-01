@@ -17,14 +17,17 @@ const initialState = {
 };
 
 export default function tiles(state = initialState, action) {
+  console.log(state);
   switch (action.type) {
     case COMPLETE_MILESTONE:
       return Object.assign({}, state, {
-        id: action.id
+        id: action.id,
+        //TODO: figure out how to flip toggle selected mileston
       });
     case UNDO_MILESTONE:
       return Object.assign({}, state, {
-        id: action.id
+        id: action.id,
+        complete: action.complete
       });
     case GENERATE_RANDOM_SEED:
       return Object.assign({}, state, {
@@ -44,12 +47,13 @@ function scramble(milestones) {
 }
 
 function populate(seed) {
-  let rng = seed();
+  let rng = seed(seed);
   let template = allMilestones;
   let selectedMilestone, scrambledBoard = [];
 
-  template.map(() => {
+  template.map((elem, index) => {
     selectedMilestone = template[Math.floor(template.length * rng)];
+    selectedMilestone.id = index;
     scrambledBoard.push(selectedMilestone);
     template = template.filter((elem) => {
       if (template.length > 1) {

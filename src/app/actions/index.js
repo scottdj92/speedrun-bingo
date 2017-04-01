@@ -7,7 +7,8 @@ export function completeMilestone(id) {
   console.log('COMPLETE_MILESTONE', id);
   return {
     type: 'COMPLETE_MILESTONE',
-    id
+    id,
+    complete: true
   };
 }
 
@@ -15,7 +16,8 @@ export function undoMilestone(id) {
   console.log('UNDO_MILESTONE', id);
   return {
     type: 'UNDO_MILESTONE',
-    id: id
+    id: id,
+    complete: false
   };
 }
 
