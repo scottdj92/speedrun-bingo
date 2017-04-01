@@ -21,14 +21,12 @@ export default function tiles(state = initialState, action) {
     case COMPLETE_MILESTONE:
       state.tiles[action.id].complete = true;
       return {
-        ...state,
-        id: action.id
+        ...state
       }
     case UNDO_MILESTONE:
       state.tiles[action.id].complete = false;
       return {
-        ...state,
-        id: action.id
+        ...state
       }
     case GENERATE_RANDOM_SEED:
     let randomSeed = generateRandomSeed(Math.random());
@@ -51,8 +49,9 @@ export default function tiles(state = initialState, action) {
 function populate(milestones, seed) {
   let template = milestones;
   let selectedMilestone, scrambledBoard = [];
+  let index = 0;
 
-  template.map((elem, index) => {
+  while (scrambledBoard.length < 25) {
     selectedMilestone = template[Math.floor(template.length * seed)];
     selectedMilestone.id = index;
     scrambledBoard.push(selectedMilestone);
@@ -63,7 +62,8 @@ function populate(milestones, seed) {
         return elem;
       }
     });
-  });
+    index++;
+  };
 
   return scrambledBoard;
 }
