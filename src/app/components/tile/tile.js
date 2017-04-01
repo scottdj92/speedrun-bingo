@@ -3,23 +3,19 @@ import React, { Component } from 'react';
 export default class Tile extends Component {
   constructor (props) {
     super(props);
-
-    this.state = {
-      completed: false
-    };
   }
 
-  handleChange(e) {
-    this.setState({completed: true});
-
-    if (this.state.completed) {
-      this.setState({completed: false});
+  toggleMilestone() {
+    if (this.props.data.complete === true) {
+      this.props.actions.undoMilestone(this.props.data.id);
+    } else {
+      this.props.actions.completeMilestone(this.props.data.id);
     }
   }
 
   render () {
     return (
-      <td onClick={this.handleChange.bind(this)} className={this.state.completed ? "complete" : '' }>{this.props.title}</td>
+      <td onClick={this.toggleMilestone.bind(this)} className={this.props.data.complete ? "complete" : ''}>{this.props.data.title}</td>
     );
   }
 }

@@ -4,7 +4,6 @@ import R from 'ramda';
 import seedRandom from 'seedrandom';
 
 import './board.scss';
-import tableTemplate from './__fixtures__/base-table';
 
 import Tile from '../tile/tile';
 import TileRow from 'Components/tile-row/TileRow';
@@ -14,68 +13,40 @@ export default class Board extends Component {
     super(props);
 
     this.state = {
-      seed: Math.ceil(999999999 * Math.random()),
       possibleSeed: null,
       tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
-      board: tableTemplate,
       cardType: 'normal'
     };
   }
 
   componentDidMount() {
-    this.populate(this.state.seed);
-  }
 
-  populate(seed) {
-    if (seed === null) {
-      seed = Math.ceil(9999999 * Math.random());
-    }
-    let rng = seedRandom(seed);
-    let template = tableTemplate;
-    let newBoard = [];
-    let selectedMilestone;
-
-    template.map(() => {
-      selectedMilestone = template[Math.floor(template.length * rng())];
-      newBoard.push(selectedMilestone);
-      template = template.filter((elem) => {
-        if (template.length > 1) {
-          return elem !== selectedMilestone;
-        } else {
-          return elem;
-        }
-      });
-    });
-
-    this.setState({board: newBoard, seed: seed});
   }
 
   handleChange(e) {
-    this.setState({possibleSeed: parseInt(e.target.value)});
+    this.setState({possibleSeed: Number(e.target.value)});
   }
 
   generateNewSeed() {
-    if (this.state.possibleSeed === '') {
-      this.setState({seed: null});
-      this.setState(this.state.seed)
+    if (this.state.possibleSeed === null) {
+      this.props.actions.generateRandomSeed();
     } else {
-      this.setState({seed: this.state.possibleSeed});
-      this.populate(this.state.possibleSeed);
+      this.props.actions.applySeed(this.state.possibleSeed);
     }
   }
 
   createHeader() {
     return this.state.tableHeader.map((col, index) => {
       return (
-        <Tile title={col} key={index}/>
+        <Tile data={{title: col}} key={index}/>
       );
     });
   }
 
   createRows() {
-    return R.splitEvery(5, this.state.board).map((row, rowIndex) => {
+    return R.splitEvery(5, this.props.data.tiles).map((row, rowIndex) => {
       return (
-        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex}/>
+        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex} actions={this.props.actions}/>
       );
     });
   }
@@ -97,7 +68,7 @@ export default class Board extends Component {
                   <div className="field">
                       <label className="label">Seed</label>
                       <p className="control">
-                          <input className="input" type="number" name="seed" placeholder="Leave blank for random seed" onChange={this.handleChange.bind(this)}/>
+                          <input className="input" type="text" name="seed" placeholder="Leave blank for a random seed" onChange={this.handleChange.bind(this)}/>
                       </p>
                   </div>
                   <div className="field">
@@ -137,11 +108,11 @@ export default class Board extends Component {
                       <tbody>
                           {this.createRows()}
                           <tr>
-                              <Tile title="BL-TR" />
+                              <Tile data={{title:"BL-TR", complete: false}} />
                           </tr>
                       </tbody>
                   </table>
-                  <p>Seed: <strong>{this.state.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
+                  <p>Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
               </div>
           </div>
       </div>
