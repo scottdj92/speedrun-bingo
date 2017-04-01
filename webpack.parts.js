@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 exports.devServer = function (options) {
   return {
@@ -65,6 +66,14 @@ exports.loadCSS = function(paths) {
     }
   };
 };
+
+exports.purifyCSS = function (paths) {
+  return {
+    plugins: [
+      new PurifyCSSPlugin({paths: paths})
+    ]
+  };
+}
 
 exports.extractCSS = function (paths) {
   return {

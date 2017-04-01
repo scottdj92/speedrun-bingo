@@ -2,12 +2,13 @@ const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const glob = require('glob');
 
 const parts = require('./webpack.parts');
 
 const PATHS = {
   app: path.join(__dirname, 'src'),
-  build: path.join(__dirname, 'dist')
+  build: path.join(__dirname, 'docs')
 };
 
 const common = merge([
@@ -39,7 +40,10 @@ module.exports = function (env) {
     return merge([
       common,
       parts.loadJavascript(PATHS.app),
-      parts.extractCSS(PATHS.app)
+      parts.extractCSS(PATHS.app),
+      // parts.purifyCSS(
+      //   glob.sync(path.join(__dirname, 'docs/index.html'))
+      // )
     ]);
   }
 
