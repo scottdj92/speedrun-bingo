@@ -1,15 +1,17 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 exports.devServer = function (options) {
   return {
     devServer: {
       historyApiFallback: true,
-      stats: 'errors-only',
       host: process.env.HOST,
       port: process.env.PORT,
       hot: true,
-      stats: 'errors-only',
+      stats: {
+        normal: true
+      },
     },
     plugins: [
       new webpack.HotModuleReplacementPlugin({})
@@ -17,7 +19,7 @@ exports.devServer = function (options) {
   };
 };
 
-exports.loadJavascript= function(paths) {
+exports.loadJavascript = function(paths) {
   return {
     module: {
       rules: [
@@ -26,8 +28,7 @@ exports.loadJavascript= function(paths) {
           include: paths,
           loader: 'babel-loader',
           query: {
-            cacheDirectory: true,
-            presets: ['react', 'es2015']
+            cacheDirectory: true
           }
         }
       ]
@@ -65,6 +66,14 @@ exports.loadCSS = function(paths) {
     }
   };
 };
+
+exports.purifyCSS = function (paths) {
+  return {
+    plugins: [
+      new PurifyCSSPlugin({paths: paths})
+    ]
+  };
+}
 
 exports.extractCSS = function (paths) {
   return {

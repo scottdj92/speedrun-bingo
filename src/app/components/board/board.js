@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import R from 'ramda';
+
+import seedRandom from 'seedrandom';
 
 import './board.scss';
-import tableTemplate from './__fixtures__/base-table';
 
 import Tile from '../tile/tile';
 import TileRow from 'Components/tile-row/TileRow';
@@ -11,32 +13,40 @@ export default class Board extends Component {
     super(props);
 
     this.state = {
-      seed: '',
-      tableHeader: ['', 'COL1', 'COL2', 'COL3', 'COL4', 'COL5']
+      possibleSeed: null,
+      tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
+      cardType: 'normal'
     };
   }
 
-  bingoGenerate() {
-    console.log(this.state.seed);
+  componentDidMount() {
+
   }
 
   handleChange(e) {
-    console.log(e.target.value);
-    this.setState({seed: e.target.value});
+    this.setState({possibleSeed: Number(e.target.value)});
+  }
+
+  generateNewSeed() {
+    if (this.state.possibleSeed === null) {
+      this.props.actions.generateRandomSeed();
+    } else {
+      this.props.actions.applySeed(this.state.possibleSeed);
+    }
   }
 
   createHeader() {
     return this.state.tableHeader.map((col, index) => {
       return (
-        <Tile title={col} key={index}/>
+        <Tile data={{title: col}} key={index}/>
       );
     });
   }
 
   createRows() {
-    return tableTemplate.map((row, rowIndex) => {
+    return R.splitEvery(5, this.props.data.tiles).map((row, rowIndex) => {
       return (
-        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex}/>
+        <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex} actions={this.props.actions}/>
       );
     });
   }
@@ -58,12 +68,12 @@ export default class Board extends Component {
                   <div className="field">
                       <label className="label">Seed</label>
                       <p className="control">
-                          <input className="input" type="text" name="seed" placeholder="Leave blank for random seed" value={this.state.seed} onChange={this.handleChange.bind(this)} />
+                          <input className="input" type="text" name="seed" placeholder="Leave blank for a random seed" onChange={this.handleChange.bind(this)}/>
                       </p>
                   </div>
                   <div className="field">
                       <p className="control">
-                          <button className="button is-dark" name="generate" onClick={this.bingoGenerate.bind(this)}>Generate</button>
+                          <button className="button is-dark" name="generate" onClick={this.generateNewSeed.bind(this)}>Generate</button>
                       </p>
                   </div>
                   <h2 className="title is-3">About Bingo</h2>
@@ -77,12 +87,15 @@ export default class Board extends Component {
                   </div>
                   <h2 className="title is-3">Bingo Rules</h2>
                   <div className="content">
-                      <p>
-                          No rules in place yet.
-                          <ul>
-                              <li></li>
-                          </ul>
-                      </p>
+                    <p>
+                      There are some specific rules in place:
+                    </p>
+                    <ul>
+                      <li>If it says to have an item, you must actually keep it. For example, if it says to have '<strong>20 arrows</strong>', you must still have it in your inventory at the time you finish getting all 5 objectives.</li>
+                      <li>To beat a shrine, you are 'finished' when you recieve a spirit orb at end of the trial. </li>
+                      <li>To beat a divine beast, you are 'finished' when you interact with main control unit.</li>
+                      <li>For collection goals such as '<strong>8 hearts</strong>', '<strong>2 wheels of stamina</strong>', etc, you're allowed to exceed the required amount.</li>
+                    </ul>
                   </div>
               </div>
               <div className="results">
@@ -95,11 +108,11 @@ export default class Board extends Component {
                       <tbody>
                           {this.createRows()}
                           <tr>
-                              <Tile title="BL-TR" />
+                              <Tile data={{title:"BL-TR", complete: false}} />
                           </tr>
                       </tbody>
                   </table>
-                  <p>Seed: <strong>1337</strong>&emsp;Card Type: <strong>Totally normal</strong></p>
+                  <p>Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
               </div>
           </div>
       </div>

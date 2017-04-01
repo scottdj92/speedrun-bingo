@@ -1,4 +1,4 @@
-@import "../../../_vars";
+@import "../../containers/_vars.scss";
 
 .container {
   margin: 0 auto;
@@ -13,6 +13,10 @@
     margin-right: 16px;
     text-align: right;
     width: 594px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -html-user-select: none;
+    -ms-user-select: none;
   }
 
   .about {
@@ -76,11 +80,8 @@
             background: $milestone-bg-hover;
             color: $milestone-color-hover;
           }
-          &.greensquare {
+          &.complete {
               background: $milestone-completed-bg;
-              &:hover {
-                  background: $milestone-completed-bg-hover;
-              }
           }
           &:first-child {
             background: $header-bg;
