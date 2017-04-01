@@ -7,17 +7,16 @@ import { COMPLETE_MILESTONE,
   APPLY_SEED
 } from '../actions';
 
-const initialSeed = seedRandom(Math.ceil(9999999 * Math.random()));
-const initialMilestones = scramble(allMilestones);
-
+const initialSeed = seedRandom(Math.random());
+initialSeed = initialSeed();
+const initialMilestones = populate(allMilestones, initialSeed);
 
 const initialState = {
   tiles: initialMilestones,
-  seed: initialSeed()
+  seed: initialSeed
 };
 
 export default function tiles(state = initialState, action) {
-  console.log(state);
   switch (action.type) {
     case COMPLETE_MILESTONE:
       state.tiles[action.id].complete = true;
@@ -32,11 +31,14 @@ export default function tiles(state = initialState, action) {
         id: action.id
       }
     case GENERATE_RANDOM_SEED:
+    let randomSeed = generateRandomSeed(Math.random());
+    state.tiles = populate(allMilestones, randomSeed);
       return {
         ...state,
-        seed: (99999999 * Math.random())
+        seed: randomSeed
       }
     case APPLY_SEED:
+    state.tiles = populate(allMilestones, action.seed);
       return {
         ...state,
         seed: action.seed
@@ -46,17 +48,12 @@ export default function tiles(state = initialState, action) {
   }
 }
 
-function scramble(milestones) {
-  return populate(initialSeed);
-}
-
-function populate(seed) {
-  let rng = seed(seed);
-  let template = allMilestones;
+function populate(milestones, seed) {
+  let template = milestones;
   let selectedMilestone, scrambledBoard = [];
 
   template.map((elem, index) => {
-    selectedMilestone = template[Math.floor(template.length * rng)];
+    selectedMilestone = template[Math.floor(template.length * seed)];
     selectedMilestone.id = index;
     scrambledBoard.push(selectedMilestone);
     template = template.filter((elem) => {
@@ -69,4 +66,8 @@ function populate(seed) {
   });
 
   return scrambledBoard;
+}
+
+function generateRandomSeed(value) {
+  return value;
 }
