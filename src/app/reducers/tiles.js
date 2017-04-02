@@ -7,8 +7,8 @@ import { COMPLETE_MILESTONE,
   APPLY_SEED
 } from '../actions';
 
-const initialSeed = seedRandom(Math.random());
-initialSeed = initialSeed();
+const initialSeed = generateRandomSeed();
+// initialSeed = initialSeed();
 const initialMilestones = populate(allMilestones, initialSeed);
 
 const initialState = {
@@ -29,7 +29,7 @@ export default function tiles(state = initialState, action) {
         ...state
       }
     case GENERATE_RANDOM_SEED:
-    let randomSeed = generateRandomSeed(Math.random());
+    let randomSeed = generateRandomSeed();
     state.tiles = populate(allMilestones, randomSeed);
       return {
         ...state,
@@ -50,9 +50,11 @@ function populate(milestones, seed) {
   let template = milestones;
   let selectedMilestone, scrambledBoard = [];
   let index = 0;
+  console.log('ogusrhgisr: ', seed);
+  let rng = seedRandom(seed);
 
   while (scrambledBoard.length < 25) {
-    selectedMilestone = template[Math.floor(template.length * seed)];
+    selectedMilestone = template[Math.floor(template.length * rng())];
     selectedMilestone.id = index;
     scrambledBoard.push(selectedMilestone);
     template = template.filter((elem) => {
@@ -68,6 +70,8 @@ function populate(milestones, seed) {
   return scrambledBoard;
 }
 
-function generateRandomSeed(value) {
-  return value;
+function generateRandomSeed() {
+  let newSeed = Math.ceil(Math.random() * 999999);
+  console.log(newSeed);
+  return newSeed;
 }
