@@ -24,7 +24,7 @@ export default class Board extends Component {
   }
 
   handleChange(e) {
-    this.setState({possibleSeed: Number(e.target.value)});
+    this.setState({possibleSeed: (e.target.value == '' ? null : Number(e.target.value))});
   }
 
   generateNewSeed() {
