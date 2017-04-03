@@ -121,7 +121,7 @@ export default class Board extends Component {
                       <li>You must play on a <a href="https://us.battle.net/support/en/article/world-of-warcraft-starter-edition">starter account</a>.</li>
                       <li>Each time you start a new bingo, create a new character.</li>
                       <ul>
-                        <li>The generator will pick a random race and class for you to play.</li>
+                        <li>The generator will pick a random race and class for you to play below the bingo card.</li>
                       </ul>
                       <li>You can also store items in bank as it will still count as your inventory.</li>
                       <li>If it mentions items or professions, you must actually keep it. For example, if it says '<strong>20 copper bars</strong>', '<strong>Mining (50)</strong>', etc, you must still have the said items in your inventory or professions learned at the time you finish getting all 5 objectives.</li>
