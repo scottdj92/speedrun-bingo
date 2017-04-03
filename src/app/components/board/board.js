@@ -14,8 +14,8 @@ export default class Board extends Component {
 
     this.state = {
       possibleSeed: null,
-      tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
-      cardType: 'normal'
+      tableHeader: ['TL-BR', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
+      cardType: 'Normal'
     };
   }
 
