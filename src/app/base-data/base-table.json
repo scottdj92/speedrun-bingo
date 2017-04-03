@@ -1,274 +1,102 @@
 [
   {
-    "title": "6 slots bag",
+    "title": "Gather 20 Arrows",
     "complete": false
   },
   {
-    "title": "Level 15",
+    "title": "Defeat Ganon",
     "complete": false
   },
   {
-    "title": "Complete 50 quests",
+    "title": "Defeat Red Lynel",
     "complete": false
   },
   {
-    "title": "Explore 1 zone",
+    "title": "Defeat Green Lynel",
     "complete": false
   },
   {
-    "title": "5 gold",
+    "title": "Get 20 Octo Balloons",
     "complete": false
   },
   {
-    "title": "10 gold",
+    "title": "Slot 6",
     "complete": false
   },
   {
-    "title": "15 gold",
+    "title": "Slot 7",
     "complete": false
   },
   {
-    "title": "Level 5",
+    "title": "Slot 8",
     "complete": false
   },
   {
-    "title": "Level 10",
+    "title": "Slot 9",
     "complete": false
   },
   {
-    "title": "Kill a rare",
+    "title": "Slot 10",
     "complete": false
   },
   {
-    "title": "Complete 25 quests",
+    "title": "Slot 11",
     "complete": false
   },
   {
-    "title": "Explore 2 zones",
+    "title": "Slot 12",
     "complete": false
   },
   {
-    "title": "A stack of 20 meats",
+    "title": "Slot 13",
     "complete": false
   },
   {
-    "title": "A stack of 20 drinks",
+    "title": "Slot 14",
     "complete": false
   },
   {
-    "title": "A stack of 20 food",
+    "title": "Slot 15",
     "complete": false
   },
   {
-    "title": "Set heathstone at a city",
+    "title": "Slot 16",
     "complete": false
   },
   {
-    "title": "Set hearthstone at Orgrimmar / Stormwind",
+    "title": "Slot 17",
     "complete": false
   },
   {
-    "title": "Set hearthstone at Exodar / Silvermoon",
+    "title": "Slot 18",
     "complete": false
   },
   {
-    "title": "Set hearthstone at Ironforge / Undercity",
+    "title": "Slot 19",
     "complete": false
   },
   {
-    "title": "Set hearthstone at Darnassus / Thunderbluff",
+    "title": "Slot 20",
     "complete": false
   },
   {
-    "title": "Uncommon weapon",
+    "title": "Slot 21",
     "complete": false
   },
   {
-    "title": "Uncommon armor",
+    "title": "Slot 22",
     "complete": false
   },
   {
-    "title": "Uncommon jewelry",
+    "title": "Slot 23",
     "complete": false
   },
   {
-    "title": "Uncommon cloak",
+    "title": "Slot 24",
     "complete": false
   },
   {
-    "title": "Tabard",
-    "complete": false
-  },
-  {
-    "title": "Rare weapon",
-    "complete": false
-  },
-  {
-    "title": "Rare armor",
-    "complete": false
-  },
-  {
-    "title": "Rare jewelry",
-    "complete": false
-  },
-  {
-    "title": "Rare cloak",
-    "complete": false
-  },
-  {
-    "title": "Learn the apprentice riding skill",
-    "complete": false
-  },
-  {
-    "title": "Level 20",
-    "complete": false
-  },
-  {
-    "title": "20 light leather",
-    "complete": false
-  },
-  {
-    "title": "20 Linen cloth",
-    "complete": false
-  },
-  {
-    "title": "20 silverleaf",
-    "complete": false
-  },
-  {
-    "title": "20 peacebloom",
-    "complete": false
-  },
-  {
-    "title": "20 briarthorn",
-    "complete": false
-  },
-  {
-    "title": "20 mageroyal",
-    "complete": false
-  },
-  {
-    "title": "20 wool cloth",
-    "complete": false
-  },
-  {
-    "title": "20 bolt of linen cloth",
-    "complete": false
-  },
-  {
-    "title": "20 copper ores",
-    "complete": false
-  },
-  {
-    "title": "20 copper bars",
-    "complete": false
-  },
-  {
-    "title": "Malachite",
-    "complete": false
-  },
-  {
-    "title": "Tigerseye",
-    "complete": false
-  },
-  {
-    "title": "Mining (50)",
-    "complete": false
-  },
-  {
-    "title": "Tailoring",
-    "complete": false
-  },
-  {
-    "title": "Blacksmithing",
-    "complete": false
-  },
-  {
-    "title": "Engineering",
-    "complete": false
-  },
-  {
-    "title": "Alchemy",
-    "complete": false
-  },
-  {
-    "title": "Skinning (50)",
-    "complete": false
-  },
-  {
-    "title": "Enchanting",
-    "complete": false
-  },
-  {
-    "title": "Herbalism (50)",
-    "complete": false
-  },
-  {
-    "title": "Inscription",
-    "complete": false
-  },
-  {
-    "title": "Jewelcrafting",
-    "complete": false
-  },
-  {
-    "title": "Leatherworking",
-    "complete": false
-  },
-  {
-    "title": "Archaeology (5)",
-    "complete": false
-  },
-  {
-    "title": "Cooking (25)",
-    "complete": false
-  },
-  {
-    "title": "First Aid (25)",
-    "complete": false
-  },
-  {
-    "title": "Fishing (25)",
-    "complete": false
-  },
-  {
-    "title": "Craft 5 unique tailoring items",
-    "complete": false
-  },
-  {
-    "title": "Craft 5 unique engineering items",
-    "complete": false
-  },
-  {
-    "title": "Craft 5 unique blacksmith items",
-    "complete": false
-  },
-  {
-    "title": "Craft 5 unique leatherworking items",
-    "complete": false
-  },
-  {
-    "title": "Craft 5 unique alchemy items",
-    "complete": false
-  },
-  {
-    "title": "Enchant a weapon",
-    "complete": false
-  },
-  {
-    "title": "Enchant a piece of armor",
-    "complete": false
-  },
-  {
-    "title": "Craft 5 unique inscription items",
-    "complete": false
-  },
-  {
-    "title": "Get a honorable kill",
-    "complete": false
-  },
-  {
-    "title": "Shirt",
+    "title": "Slot 25",
     "complete": false
   }
 ]

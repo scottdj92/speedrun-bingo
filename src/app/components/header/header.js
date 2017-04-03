@@ -9,7 +9,7 @@ export default class Header extends Component {
 
   render () {
     return (
-      <h1 className="title is-2">Welcome to World of Warcraft Bingo!</h1>
+      <h1 className="title is-2">Welcome to Bingo!</h1>
     );
   }
 }
