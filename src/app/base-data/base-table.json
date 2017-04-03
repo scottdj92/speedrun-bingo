@@ -16,15 +16,15 @@
     "complete": false
   },
   {
-    "title": "5 gold",
+    "title": "50s",
     "complete": false
   },
   {
-    "title": "10 gold",
+    "title": "1g",
     "complete": false
   },
   {
-    "title": "15 gold",
+    "title": "1g 50s",
     "complete": false
   },
   {
@@ -100,22 +100,6 @@
     "complete": false
   },
   {
-    "title": "Rare weapon",
-    "complete": false
-  },
-  {
-    "title": "Rare armor",
-    "complete": false
-  },
-  {
-    "title": "Rare jewelry",
-    "complete": false
-  },
-  {
-    "title": "Rare cloak",
-    "complete": false
-  },
-  {
     "title": "Learn the apprentice riding skill",
     "complete": false
   },
@@ -145,10 +129,6 @@
   },
   {
     "title": "20 mageroyal",
-    "complete": false
-  },
-  {
-    "title": "20 wool cloth",
     "complete": false
   },
   {
@@ -192,7 +172,7 @@
     "complete": false
   },
   {
-    "title": "Skinning (50)",
+    "title": "Skinning (40)",
     "complete": false
   },
   {
@@ -249,10 +229,6 @@
   },
   {
     "title": "Craft 5 unique alchemy items",
-    "complete": false
-  },
-  {
-    "title": "Enchant a weapon",
     "complete": false
   },
   {
