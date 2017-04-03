@@ -55,7 +55,7 @@ export default class Board extends Component {
     return (
       <div className="container">
           <div className="bingoPage">
-              <div className="about">
+              <div className="about is-pulled-right">
                   <h2 className="title is-3">Generate a new card</h2>
                   <div className="content">
                       <p>
@@ -91,10 +91,15 @@ export default class Board extends Component {
                       There are some specific rules in place:
                     </p>
                     <ul>
-                      <li>If it says to have an item, you must actually keep it. For example, if it says to have '<strong>20 arrows</strong>', you must still have it in your inventory at the time you finish getting all 5 objectives.</li>
-                      <li>To beat a shrine, you are 'finished' when you recieve a spirit orb at end of the trial. </li>
-                      <li>To beat a divine beast, you are 'finished' when you interact with main control unit.</li>
-                      <li>For collection goals such as '<strong>8 hearts</strong>', '<strong>2 wheels of stamina</strong>', etc, you're allowed to exceed the required amount.</li>
+                      <li>You must start with a new toon.</li>
+                      <li>BoA gears are allowed.</li>
+                      <li>If it says to have an item, you must actually keep it. For example, if it says to have '<strong>20 copper bars</strong>', you must still have it in your inventory at the time you finish getting all 5 objectives.</li>
+                      <li>You can also store items in bank as it will still count as inventory.</li>
+                      <li>If it says to craft, you must craft it yourself and the tooltip over crafted item must say '<i>Created by &lt;you&gt;</i>'</li>
+                      <li>For collection goals such as '<strong>20 peacebloom</strong>', '<strong>10 gold</strong>', etc, you're allowed to exceed the required amount.</li>
+                      <li>You can use the auction house to purchase or sell.</li>
+                      <li>Cannot receive gold or items from alts.</li>
+                      <li>Death Knight or Demon Hunter are not allowed.</li>
                     </ul>
                   </div>
               </div>
