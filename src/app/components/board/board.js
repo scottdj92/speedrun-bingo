@@ -91,15 +91,15 @@ export default class Board extends Component {
                       There are some specific rules in place:
                     </p>
                     <ul>
-                      <li>You must start with a new toon.</li>
-                      <li>BoA gears are allowed.</li>
-                      <li>If it says to have an item, you must actually keep it. For example, if it says to have '<strong>20 copper bars</strong>', you must still have it in your inventory at the time you finish getting all 5 objectives.</li>
-                      <li>You can also store items in bank as it will still count as inventory.</li>
+                      <li>You must play on a <a href="https://us.battle.net/support/en/article/world-of-warcraft-starter-edition">starter account</a>.</li>
+                      <li>Each time you start a new bingo, create a new character.</li>
+                      <ul>
+                        <li>The generator will pick a random race and class for you to play.</li>
+                      </ul>
+                      <li>You can also store items in bank as it will still count as your inventory.</li>
+                      <li>If it mentions items or professions, you must actually keep it. For example, if it says '<strong>20 copper bars</strong>', '<strong>Mining (50)</strong>', etc, you must still have the said items in your inventory or professions learned at the time you finish getting all 5 objectives.</li>
                       <li>If it says to craft, you must craft it yourself and the tooltip over crafted item must say '<i>Created by &lt;you&gt;</i>'</li>
-                      <li>For collection goals such as '<strong>20 peacebloom</strong>', '<strong>10 gold</strong>', etc, you're allowed to exceed the required amount.</li>
-                      <li>You can use the auction house to purchase or sell.</li>
-                      <li>Cannot receive gold or items from alts.</li>
-                      <li>Death Knight or Demon Hunter are not allowed.</li>
+                      <li>For collection goals such as '<strong>20 peacebloom</strong>', '<strong>1 gold</strong>', etc, you're allowed to exceed the required amount.</li>
                     </ul>
                   </div>
               </div>
