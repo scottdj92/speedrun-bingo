@@ -18,7 +18,7 @@ export default class TileRow extends Component {
   render () {
     return (
       <tr>
-        <Tile data={{title: 'ROW ' + this.props.rowIndex, complete: false}}/>
+        <Tile data={{title: 'ROW ' + (this.props.rowIndex+1), complete: false}}/>
         {this.createTiles()}
       </tr>
     )
