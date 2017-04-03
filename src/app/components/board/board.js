@@ -17,7 +17,8 @@ export default class Board extends Component {
       tableHeader: ['TL-BR', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
       cardType: 'Normal',
       wowRace: 'Human',
-      wowClass: 'Warrior'
+      wowClass: 'Warrior',
+      version: "1.0"
     };
   }
 
@@ -143,7 +144,7 @@ export default class Board extends Component {
                           </tr>
                       </tbody>
                   </table>
-                  <p>Race: <strong>{this.state.wowRace}</strong>&emsp;Class: <strong>{this.state.wowClass}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v1.0</strong></p>
+                  <p>Race: <strong>{this.state.wowRace}</strong>&emsp;Class: <strong>{this.state.wowClass}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v{this.state.version}</strong></p>
               </div>
           </div>
       </div>
