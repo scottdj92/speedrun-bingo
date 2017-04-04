@@ -7,18 +7,14 @@ const initalState = {
   wowClass: 'Warrior'
 };
 
-export default function wow(state = initalState, action) {
+export default function generateRaceAndClass(state = initalState, action) {
   switch (action.type) {
     case GENERATE_WOW_COMBO:
-      // state.wowRace = 'Undead';
-      // state.wowClass = 'Hunter';
-      console.log('wow(GENERATE_WOW_COMBO)');
       return {
         ...state,
         wowRace: 'Undead',
         wowClass: 'Hunter'
       }
-    
     default:
       return state;
   }

@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div>
         <Header/>
-        <Board actions={this.props.actions} data={this.props.tiles}/>
+        <Board actions={this.props.actions} data={this.props.tiles} raceAndClass={this.props.raceAndClass}/>
       </div>
     );
   }
@@ -28,7 +28,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    tiles: state.tiles
+    tiles: state.tiles,
+    raceAndClass: state.raceAndClass
   };
 }
 

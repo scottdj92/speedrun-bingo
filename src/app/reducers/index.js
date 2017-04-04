@@ -5,7 +5,7 @@ import WoWReducer from './wow';
 
 const rootReducer = combineReducers({
   tiles: TilesReducer,
-  wow: WoWReducer,
+  raceAndClass: WoWReducer
 });
 
 export default rootReducer;
