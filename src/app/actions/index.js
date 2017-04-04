@@ -38,8 +38,8 @@ export function applySeed(seed) {
 }
 
 export function generateWoWCombo() {
-  console.log('GENERATE_WOW_COMBO');
+  // console.log('GENERATE_WOW_COMBO');
   return {
-    type: 'GENERATE_WOW_COMBO',
-  }
+    type: 'GENERATE_WOW_COMBO'
+  };
 }
