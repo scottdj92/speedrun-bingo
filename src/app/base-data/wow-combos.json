@@ -1,0 +1,142 @@
+[
+  {
+    "race": "Draenei",
+    "classes": [
+      "Hunter",
+      "Mage",
+      "Paladin",
+      "Priest",
+      "Shaman",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Dwarf",
+    "classes": [
+      "Hunter",
+      "Mage",
+      "Paladin",
+      "Priest",
+      "Rogue",
+      "Shaman",
+      "Warlock",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Gnome",
+    "classes": [
+      "Hunter",
+      "Mage",
+      "Priest",
+      "Rogue",
+      "Warlock",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Human",
+    "classes": [
+      "Hunter",
+      "Mage",
+      "Paladin",
+      "Priest",
+      "Rogue",
+      "Warlock",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Night Elf",
+    "classes": [
+      "Druid",
+      "Hunter",
+      "Mage",
+      "Priest",
+      "Rogue",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Worgen",
+    "classes": [
+      "Druid",
+      "Hunter",
+      "Mage",
+      "Priest",
+      "Rogue",
+      "Warlock",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Blood Elf",
+    "classes": [
+      "Hunter",
+      "Mage",
+      "Paladin",
+      "Priest",
+      "Rogue",
+      "Warlock",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Goblin",
+    "classes": [
+      "Hunter",
+      "Mage",
+      "Priest",
+      "Rogue",
+      "Shaman",
+      "Warlock",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Orc",
+    "classes": [
+      "Hunter",
+      "Mage",
+      "Rogue",
+      "Shaman",
+      "Warlock",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Tauren",
+    "classes": [
+      "Druid",
+      "Hunter",
+      "Paladin",
+      "Priest",
+      "Shaman",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Troll",
+    "classes": [
+      "Druid",
+      "Hunter",
+      "Mage",
+      "Priest",
+      "Rogue",
+      "Shaman",
+      "Warlock",
+      "Warrior"
+    ]
+  },
+  {
+    "race": "Undead",
+    "classes": [
+      "Hunter",
+      "Mage",
+      "Priest",
+      "Rogue",
+      "Warlock",
+      "Warrior"
+    ]
+  }
+]

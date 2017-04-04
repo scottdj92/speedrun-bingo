@@ -16,14 +16,15 @@ export default class Board extends Component {
       possibleSeed: null,
       tableHeader: ['TL-BR', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
       cardType: 'Normal',
-      wowRace: 'Human',
-      wowClass: 'Warrior',
+      wowRace: null,
+      wowClass: null,
       version: "1.1"
     };
   }
 
   componentDidMount() {
-    this.generateWoWCombo();
+    this.props.actions.generateWoWCombo();
+    console.log(this.props);
   }
 
   handleChange(e) {
@@ -31,7 +32,7 @@ export default class Board extends Component {
   }
 
   generateNewSeed() {
-    this.generateWoWCombo();
+    this.props.actions.generateWoWCombo();
     if (this.state.possibleSeed === null) {
       this.props.actions.generateRandomSeed();
     } else {
@@ -53,29 +54,6 @@ export default class Board extends Component {
         <TileRow rowIndex={rowIndex} tiles={row} key={rowIndex} actions={this.props.actions}/>
       );
     });
-  }
-
-  generateWoWCombo() {
-    let wowRaces = ['Human', 'Dwarf', 'Night Elf', 'Gnome', 'Draenei', 'Worgen', 'Orc', 'Undead', 'Tauren', 'Troll', 'Blood Elf', 'Goblin'];
-    let wowRace = wowRaces[Math.floor(Math.random() * wowRaces.length)];
-    this.setState({wowRace: wowRace});
-    
-    // Really hacky way but whatever
-    let classes = [];
-    classes['Human'] = ['Rogue', 'Mage', 'Priest', 'Warrior', 'Hunter', 'Warlock', 'Paladin'];
-    classes['Dwarf'] = ['Hunter', 'Mage', 'Priest', 'Shaman', 'Rogue', 'Warlock', 'Paladin', 'Warrior'];
-    classes['Night Elf'] = ['Hunter', 'Druid', 'Mage', 'Warrior', 'Rogue', 'Priest'];
-    classes['Gnome'] = ['Hunter', 'Warlock', 'Mage', 'Priest', 'Warrior', 'Rogue'];
-    classes['Draenei'] = ['Hunter', 'Priest', 'Shaman', 'Mage', 'Paladin', 'Warrior'];
-    classes['Worgen'] = ['Hunter', 'Rogue', 'Mage',' Warlock', 'Druid', 'Priest', 'Warrior'];
-    classes['Orc'] = ['Hunter', 'Rogue', 'Shaman', 'Mage', 'Warlock', 'Warrior'];
-    classes['Undead'] = ['Hunter', 'Mage', 'Priest', 'Warlock', 'Rogue', 'Warrior'];
-    classes['Tauren'] = ['Hunter', 'Druid', 'Priest', 'Shaman', 'Paladin', 'Warrior'];
-    classes['Troll'] = ['Hunter', 'Mage', 'Rogue', 'Shaman', 'Druid', 'Priest', 'Warlock', 'Warrior'];
-    classes['Blood Elf'] = ['Hunter', 'Priest', 'Warlock', 'Mage', 'Paladin', 'Rogue', 'Warrior'];
-    classes['Goblin'] = ['Hunter', 'Mage', 'Rogue', 'Shaman', 'Priest', 'Warlock', 'Warrior'];
-    let wowClass = classes[wowRace][Math.floor(Math.random() * classes[wowRace].length)];
-    this.setState({wowClass: wowClass});
   }
 
   render () {
@@ -144,7 +122,7 @@ export default class Board extends Component {
                           </tr>
                       </tbody>
                   </table>
-                  <p>Race: <strong>{this.state.wowRace}</strong>&emsp;Class: <strong>{this.state.wowClass}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v{this.state.version}</strong></p>
+                  <p>Race: <strong>{this.props.wowData.race}</strong>&emsp;Class: <strong>{this.props.wowData.class}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v{this.state.version}</strong></p>
               </div>
           </div>
       </div>
