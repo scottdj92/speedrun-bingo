@@ -14,39 +14,18 @@ export default class Board extends Component {
 
     this.state = {
       possibleSeed: null,
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-      tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
-      cardType: 'normal'
-=======
       tableHeader: ['TL-BR', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
       cardType: 'Normal',
       wowRace: null,
       wowClass: null,
       version: "1.1"
->>>>>>> Stashed changes
-=======
-      tableHeader: ['TL-BR', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
-      cardType: 'Normal',
-      wowRace: 'Human',
-      wowClass: 'Warrior',
-      version: "1.1"
->>>>>>> 7ed4002caf0aa64f3aabb67a4d6e49d2f4b9d328
     };
   }
 
   componentDidMount() {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-
-=======
     // this.generateWoWCombo();
     this.props.actions.generateWoWCombo();
     console.log(this.props);
->>>>>>> Stashed changes
-=======
-    this.generateWoWCombo();
->>>>>>> 7ed4002caf0aa64f3aabb67a4d6e49d2f4b9d328
   }
 
   handleChange(e) {
@@ -54,14 +33,7 @@ export default class Board extends Component {
   }
 
   generateNewSeed() {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
     // this.generateWoWCombo();
->>>>>>> Stashed changes
-=======
-    this.generateWoWCombo();
->>>>>>> 7ed4002caf0aa64f3aabb67a4d6e49d2f4b9d328
     if (this.state.possibleSeed === null) {
       this.props.actions.generateRandomSeed();
     } else {
@@ -85,6 +57,7 @@ export default class Board extends Component {
     });
   }
 
+  // OLD - TRYING THE REDUCER
   generateWoWCombo() {
     let wowRaces = ['Human', 'Dwarf', 'Night Elf', 'Gnome', 'Draenei', 'Worgen', 'Orc', 'Undead', 'Tauren', 'Troll', 'Blood Elf', 'Goblin'];
     let wowRace = wowRaces[Math.floor(Math.random() * wowRaces.length)];
@@ -174,15 +147,7 @@ export default class Board extends Component {
                           </tr>
                       </tbody>
                   </table>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-                  <p>Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
-=======
                   <p>Race: <strong>{this.props.data.wowRace}</strong>&emsp;Class: <strong>{this.state.wowClass}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v{this.state.version}</strong></p>
->>>>>>> Stashed changes
-=======
-                  <p>Race: <strong>{this.state.wowRace}</strong>&emsp;Class: <strong>{this.state.wowClass}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v{this.state.version}</strong></p>
->>>>>>> 7ed4002caf0aa64f3aabb67a4d6e49d2f4b9d328
               </div>
           </div>
       </div>
