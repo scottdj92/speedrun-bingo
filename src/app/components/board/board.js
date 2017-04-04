@@ -147,7 +147,7 @@ export default class Board extends Component {
                           </tr>
                       </tbody>
                   </table>
-                  <p>Race: <strong>{this.props.raceAndClass.wowRace}</strong>&emsp;Class: <strong>{this.props.raceAndClass.wowClass}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v{this.state.version}</strong></p>
+                  <p>Race: <strong>{this.props.wowData.race}</strong>&emsp;Class: <strong>{this.props.wowData.class}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v{this.state.version}</strong></p>
               </div>
           </div>
       </div>

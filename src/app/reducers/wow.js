@@ -3,15 +3,15 @@ import {
 } from '../actions';
 
 const initalState = {
-  wowRace: 'Human',
-  wowClass: 'Warrior'
+  race: 'Human',
+  class: 'Warrior'
 };
 
 export default function generateRaceAndClass(state = initalState, action) {
   switch (action.type) {
     case GENERATE_WOW_COMBO:
-      state.wowRace = 'Undead';
-      state.wowClass = 'Hunter';
+      state.race = 'Undead';
+      state.class = 'Hunter';
       return {
         ...state
       }

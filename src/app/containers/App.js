@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div>
         <Header/>
-        <Board actions={this.props.actions} data={this.props.tiles} raceAndClass={this.props.raceAndClass}/>
+        <Board actions={this.props.actions} data={this.props.tiles} wowData={this.props.raceAndClass}/>
       </div>
     );
   }
