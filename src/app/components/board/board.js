@@ -14,13 +14,27 @@ export default class Board extends Component {
 
     this.state = {
       possibleSeed: null,
+<<<<<<< Updated upstream
       tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
       cardType: 'normal'
+=======
+      tableHeader: ['TL-BR', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
+      cardType: 'Normal',
+      wowRace: null,
+      wowClass: null,
+      version: "1.1"
+>>>>>>> Stashed changes
     };
   }
 
   componentDidMount() {
+<<<<<<< Updated upstream
 
+=======
+    // this.generateWoWCombo();
+    this.props.actions.generateWoWCombo();
+    console.log(this.props);
+>>>>>>> Stashed changes
   }
 
   handleChange(e) {
@@ -28,6 +42,10 @@ export default class Board extends Component {
   }
 
   generateNewSeed() {
+<<<<<<< Updated upstream
+=======
+    // this.generateWoWCombo();
+>>>>>>> Stashed changes
     if (this.state.possibleSeed === null) {
       this.props.actions.generateRandomSeed();
     } else {
@@ -112,7 +130,11 @@ export default class Board extends Component {
                           </tr>
                       </tbody>
                   </table>
+<<<<<<< Updated upstream
                   <p>Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
+=======
+                  <p>Race: <strong>{this.props.data.wowRace}</strong>&emsp;Class: <strong>{this.state.wowClass}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v{this.state.version}</strong></p>
+>>>>>>> Stashed changes
               </div>
           </div>
       </div>

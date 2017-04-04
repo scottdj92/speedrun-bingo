@@ -2,6 +2,7 @@ export const COMPLETE_MILESTONE = 'COMPLETE_MILESTONE';
 export const UNDO_MILESTONE = 'UNDO_MILESTONE';
 export const GENERATE_RANDOM_SEED = 'GENERATE_RANDOM_SEED';
 export const APPLY_SEED = 'APPLY_SEED';
+export const GENERATE_WOW_COMBO = 'GENERATE_WOW_COMBO';
 
 export function completeMilestone(id) {
   // console.log('COMPLETE_MILESTONE', id);
@@ -34,4 +35,11 @@ export function applySeed(seed) {
     type: 'APPLY_SEED',
     seed: seed
   };
+}
+
+export function generateWoWCombo() {
+  console.log('GENERATE_WOW_COMBO');
+  return {
+    type: 'GENERATE_WOW_COMBO',
+  }
 }
