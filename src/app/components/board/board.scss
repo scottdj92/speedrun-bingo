@@ -2,6 +2,7 @@
 
 .container {
   margin: 0 auto;
+  overflow: auto;
   padding: 8px -10px 16px 16px;
   width: 976px;
 }
@@ -15,6 +16,7 @@
   }
 
   .about {
+    float: right;
     width: 365px;
     .bingoButton {
       font-weight: bold;
