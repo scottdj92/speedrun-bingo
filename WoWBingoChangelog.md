@@ -1,5 +1,8 @@
 # World of Warcraft Bingo Changelog
 
+## v1.1.1
+* Refactored logic for random race/class to be more efficient.
+
 ## v1.1
 * Added a new rule requiring players to play on a starter account.
 * Removed some rules that is already enforced by starter account restrictions.
