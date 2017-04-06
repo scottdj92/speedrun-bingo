@@ -18,7 +18,7 @@ export default class Board extends Component {
       cardType: 'Normal',
       wowRace: null,
       wowClass: null,
-      version: "1.1"
+      version: "1.1.1"
     };
   }
 
