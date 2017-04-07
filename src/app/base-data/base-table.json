@@ -20,11 +20,11 @@
     "complete": false
   },
   {
-    "title": "1g",
+    "title": "75s",
     "complete": false
   },
   {
-    "title": "1g 50s",
+    "title": "1g",
     "complete": false
   },
   {
@@ -124,14 +124,6 @@
     "complete": false
   },
   {
-    "title": "20 briarthorn",
-    "complete": false
-  },
-  {
-    "title": "20 mageroyal",
-    "complete": false
-  },
-  {
     "title": "20 bolt of linen cloth",
     "complete": false
   },
@@ -172,7 +164,7 @@
     "complete": false
   },
   {
-    "title": "Skinning (40)",
+    "title": "Skinning (50)",
     "complete": false
   },
   {
@@ -196,7 +188,7 @@
     "complete": false
   },
   {
-    "title": "Archaeology (5)",
+    "title": "Archaeology",
     "complete": false
   },
   {
@@ -245,6 +237,34 @@
   },
   {
     "title": "Shirt",
+    "complete": false
+  },
+  {
+    "title": "20 Rough Stones",
+    "complete": false
+  },
+  {
+    "title": "Craft a Runed Copper Rod",
+    "complete": false
+  },
+  {
+    "title": "20 Rough Blasting Powders",
+    "complete": false
+  },
+  {
+    "title": "20 Light Armor Kits",
+    "complete": false
+  },
+  {
+    "title": "10 Delicate Copper Wires",
+    "complete": false
+  },
+  {
+    "title": "20 Moonglow Ink",
+    "complete": false
+  },
+  {
+    "title": "20 Earthroot",
     "complete": false
   }
 ]
