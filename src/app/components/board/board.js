@@ -60,7 +60,7 @@ export default class Board extends Component {
     return (
       <div className="container">
           <div className="bingoPage">
-              <div className="about is-pulled-right">
+              <div className="about">
                   <h2 className="title is-3">Generate a new card</h2>
                   <div className="content">
                       <p>
