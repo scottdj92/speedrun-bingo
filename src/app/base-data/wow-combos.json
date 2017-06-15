@@ -58,18 +58,6 @@
     ]
   },
   {
-    "race": "Worgen",
-    "classes": [
-      "Druid",
-      "Hunter",
-      "Mage",
-      "Priest",
-      "Rogue",
-      "Warlock",
-      "Warrior"
-    ]
-  },
-  {
     "race": "Blood Elf",
     "classes": [
       "Hunter",
@@ -77,18 +65,6 @@
       "Paladin",
       "Priest",
       "Rogue",
-      "Warlock",
-      "Warrior"
-    ]
-  },
-  {
-    "race": "Goblin",
-    "classes": [
-      "Hunter",
-      "Mage",
-      "Priest",
-      "Rogue",
-      "Shaman",
       "Warlock",
       "Warrior"
     ]
