@@ -1,102 +1,270 @@
 [
   {
-    "title": "Gather 20 Arrows",
+    "title": "6 slots bag",
     "complete": false
   },
   {
-    "title": "Defeat Ganon",
+    "title": "Complete 50 quests",
     "complete": false
   },
   {
-    "title": "Defeat Red Lynel",
+    "title": "Explore 1 zone",
     "complete": false
   },
   {
-    "title": "Defeat Green Lynel",
+    "title": "Explore 2 zones",
     "complete": false
   },
   {
-    "title": "Get 20 Octo Balloons",
+    "title": "50 Silver",
     "complete": false
   },
   {
-    "title": "Slot 6",
+    "title": "75 Silver",
     "complete": false
   },
   {
-    "title": "Slot 7",
+    "title": "1 Gold",
     "complete": false
   },
   {
-    "title": "Slot 8",
+    "title": "Level 5",
     "complete": false
   },
   {
-    "title": "Slot 9",
+    "title": "Level 10",
     "complete": false
   },
   {
-    "title": "Slot 10",
+    "title": "Level 15",
     "complete": false
   },
   {
-    "title": "Slot 11",
+    "title": "Level 20",
     "complete": false
   },
   {
-    "title": "Slot 12",
+    "title": "Kill a rare",
     "complete": false
   },
   {
-    "title": "Slot 13",
+    "title": "Complete 25 quests",
     "complete": false
   },
   {
-    "title": "Slot 14",
+    "title": "A stack of 20 meats",
     "complete": false
   },
   {
-    "title": "Slot 15",
+    "title": "A stack of 20 drinks",
     "complete": false
   },
   {
-    "title": "Slot 16",
+    "title": "A stack of 20 food",
     "complete": false
   },
   {
-    "title": "Slot 17",
+    "title": "Set heathstone at a city",
     "complete": false
   },
   {
-    "title": "Slot 18",
+    "title": "Set hearthstone at Orgrimmar / Stormwind",
     "complete": false
   },
   {
-    "title": "Slot 19",
+    "title": "Set hearthstone at Exodar / Silvermoon",
     "complete": false
   },
   {
-    "title": "Slot 20",
+    "title": "Set hearthstone at Ironforge / Undercity",
     "complete": false
   },
   {
-    "title": "Slot 21",
+    "title": "Set hearthstone at Darnassus / Thunderbluff",
     "complete": false
   },
   {
-    "title": "Slot 22",
+    "title": "Uncommon weapon",
     "complete": false
   },
   {
-    "title": "Slot 23",
+    "title": "Uncommon armor",
     "complete": false
   },
   {
-    "title": "Slot 24",
+    "title": "Uncommon jewelry",
     "complete": false
   },
   {
-    "title": "Slot 25",
+    "title": "Uncommon cloak",
+    "complete": false
+  },
+  {
+    "title": "Tabard",
+    "complete": false
+  },
+  {
+    "title": "Learn the apprentice riding skill",
+    "complete": false
+  },
+  {
+    "title": "20 light leather",
+    "complete": false
+  },
+  {
+    "title": "20 Linen cloth",
+    "complete": false
+  },
+  {
+    "title": "20 Silverleaf",
+    "complete": false
+  },
+  {
+    "title": "20 Peacebloom",
+    "complete": false
+  },
+  {
+    "title": "20 Bolt of linen cloth",
+    "complete": false
+  },
+  {
+    "title": "20 Copper ores",
+    "complete": false
+  },
+  {
+    "title": "20 Copper bars",
+    "complete": false
+  },
+  {
+    "title": "Malachite",
+    "complete": false
+  },
+  {
+    "title": "Tigerseye",
+    "complete": false
+  },
+  {
+    "title": "Mining (50)",
+    "complete": false
+  },
+  {
+    "title": "Tailoring (5)",
+    "complete": false
+  },
+  {
+    "title": "Blacksmithing (5)",
+    "complete": false
+  },
+  {
+    "title": "Engineering (5)",
+    "complete": false
+  },
+  {
+    "title": "Alchemy (5)",
+    "complete": false
+  },
+  {
+    "title": "Skinning (50)",
+    "complete": false
+  },
+  {
+    "title": "Enchanting",
+    "complete": false
+  },
+  {
+    "title": "Herbalism (50)",
+    "complete": false
+  },
+  {
+    "title": "Inscription (5)",
+    "complete": false
+  },
+  {
+    "title": "Jewelcrafting (5)",
+    "complete": false
+  },
+  {
+    "title": "Leatherworking (5)",
+    "complete": false
+  },
+  {
+    "title": "Archaeology",
+    "complete": false
+  },
+  {
+    "title": "Cooking (25)",
+    "complete": false
+  },
+  {
+    "title": "First Aid (25)",
+    "complete": false
+  },
+  {
+    "title": "Fishing (25)",
+    "complete": false
+  },
+  {
+    "title": "Craft 5 unique tailoring items",
+    "complete": false
+  },
+  {
+    "title": "Craft 5 unique engineering items",
+    "complete": false
+  },
+  {
+    "title": "Craft 5 unique blacksmith items",
+    "complete": false
+  },
+  {
+    "title": "Craft 5 unique leatherworking items",
+    "complete": false
+  },
+  {
+    "title": "Craft 5 unique alchemy items",
+    "complete": false
+  },
+  {
+    "title": "Enchant a piece of armor",
+    "complete": false
+  },
+  {
+    "title": "Craft 5 unique inscription items",
+    "complete": false
+  },
+  {
+    "title": "Get a honorable kill",
+    "complete": false
+  },
+  {
+    "title": "Shirt",
+    "complete": false
+  },
+  {
+    "title": "20 Rough Stones",
+    "complete": false
+  },
+  {
+    "title": "Craft a Runed Copper Rod",
+    "complete": false
+  },
+  {
+    "title": "20 Rough Blasting Powders",
+    "complete": false
+  },
+  {
+    "title": "20 Light Armor Kits",
+    "complete": false
+  },
+  {
+    "title": "10 Delicate Copper Wires",
+    "complete": false
+  },
+  {
+    "title": "20 Moonglow Ink",
+    "complete": false
+  },
+  {
+    "title": "20 Earthroot",
     "complete": false
   }
 ]

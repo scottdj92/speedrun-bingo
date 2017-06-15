@@ -13,10 +13,6 @@
     margin-right: 16px;
     text-align: right;
     width: 594px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -html-user-select: none;
-    -ms-user-select: none;
   }
 
   .about {
@@ -41,6 +37,10 @@
   }
 
   .bingo {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -html-user-select: none;
+    -ms-user-select: none;
     thead {
       td {
         height: 30px;
@@ -48,6 +48,12 @@
         text-align: center;
         vertical-align: middle;
         background-color: $header-bg;
+        font-size: 75%;
+        font-weight: 700;
+        &:hover {
+              background: $header-bg-hover;
+              color: $header-color-hover;
+        }
       }
     }
     tbody {
@@ -89,7 +95,7 @@
             color: $header-color;
             font-size: 75%;
             font-weight: 700;
-            width: 35px;
+            width: 37px;
             &:hover {
               background: $header-bg-hover;
               color: $header-color-hover;

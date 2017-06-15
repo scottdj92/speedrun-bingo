@@ -14,13 +14,17 @@ export default class Board extends Component {
 
     this.state = {
       possibleSeed: null,
-      tableHeader: ['', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
-      cardType: 'normal'
+      tableHeader: ['TL-BR', 'COL 1', 'COL 2', 'COL 3', 'COL 4', 'COL 5'],
+      cardType: 'Normal',
+      wowRace: null,
+      wowClass: null,
+      version: "1.1.3"
     };
   }
 
   componentDidMount() {
-
+    this.props.actions.generateWoWCombo();
+    console.log(this.props);
   }
 
   handleChange(e) {
@@ -28,6 +32,7 @@ export default class Board extends Component {
   }
 
   generateNewSeed() {
+    this.props.actions.generateWoWCombo();
     if (this.state.possibleSeed === null) {
       this.props.actions.generateRandomSeed();
     } else {
@@ -84,6 +89,9 @@ export default class Board extends Component {
                       <p>
                           You can click on the squares to turn them green when you have performed tasks successfully.
                       </p>
+                      <p>
+                          <a href="https://github.com/mrawlingst/wow-bingo/blob/master/WoWBingoChangelog.md">Changelog</a> for WoW Bingo.
+                      </p>
                   </div>
                   <h2 className="title is-3">Bingo Rules</h2>
                   <div className="content">
@@ -91,10 +99,15 @@ export default class Board extends Component {
                       There are some specific rules in place:
                     </p>
                     <ul>
-                      <li>If it says to have an item, you must actually keep it. For example, if it says to have '<strong>20 arrows</strong>', you must still have it in your inventory at the time you finish getting all 5 objectives.</li>
-                      <li>To beat a shrine, you are 'finished' when you recieve a spirit orb at end of the trial. </li>
-                      <li>To beat a divine beast, you are 'finished' when you interact with main control unit.</li>
-                      <li>For collection goals such as '<strong>8 hearts</strong>', '<strong>2 wheels of stamina</strong>', etc, you're allowed to exceed the required amount.</li>
+                      <li>You must play on a <a href="https://us.battle.net/support/en/article/world-of-warcraft-starter-edition">starter account</a>.</li>
+                      <li>Each time you start a new bingo, create a new character.</li>
+                      <ul>
+                        <li>The generator will pick a random race and class for you to play below the bingo card.</li>
+                      </ul>
+                      <li>You can also store items in bank as it will still count as your inventory.</li>
+                      <li>If it mentions items or professions, you must actually keep it. For example, if it says '<strong>20 copper bars</strong>', '<strong>Mining (50)</strong>', etc, you must still have the said items in your inventory or professions learned at the time you finish getting all 5 objectives.</li>
+                      <li>If it says to craft, you must craft it yourself and the tooltip over crafted item must say '<i>Created by &lt;you&gt;</i>'</li>
+                      <li>For collection goals such as '<strong>20 peacebloom</strong>', '<strong>1 gold</strong>', etc, you're allowed to exceed the required amount.</li>
                     </ul>
                   </div>
               </div>
@@ -112,7 +125,7 @@ export default class Board extends Component {
                           </tr>
                       </tbody>
                   </table>
-                  <p>Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong></p>
+                  <p>Race: <strong>{this.props.wowData.race}</strong>&emsp;Class: <strong>{this.props.wowData.class}</strong>&emsp;Seed: <strong>{this.props.data.seed}</strong>&emsp;Card Type: <strong>{this.state.cardType}</strong>&emsp;Version: <strong>v{this.state.version}</strong></p>
               </div>
           </div>
       </div>
