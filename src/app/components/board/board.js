@@ -18,7 +18,7 @@ export default class Board extends Component {
       cardType: 'Normal',
       wowRace: null,
       wowClass: null,
-      version: "1.1.2"
+      version: "1.1.3"
     };
   }
 
@@ -88,6 +88,9 @@ export default class Board extends Component {
                       </p>
                       <p>
                           You can click on the squares to turn them green when you have performed tasks successfully.
+                      </p>
+                      <p>
+                          <a href="https://github.com/mrawlingst/wow-bingo/blob/master/WoWBingoChangelog.md">Changelog</a> for WoW Bingo.
                       </p>
                   </div>
                   <h2 className="title is-3">Bingo Rules</h2>

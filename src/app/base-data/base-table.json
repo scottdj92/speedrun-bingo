@@ -4,10 +4,6 @@
     "complete": false
   },
   {
-    "title": "Level 15",
-    "complete": false
-  },
-  {
     "title": "Complete 50 quests",
     "complete": false
   },
@@ -16,15 +12,19 @@
     "complete": false
   },
   {
-    "title": "50s",
+    "title": "Explore 2 zones",
     "complete": false
   },
   {
-    "title": "75s",
+    "title": "50 Silver",
     "complete": false
   },
   {
-    "title": "1g",
+    "title": "75 Silver",
+    "complete": false
+  },
+  {
+    "title": "1 Gold",
     "complete": false
   },
   {
@@ -36,15 +36,19 @@
     "complete": false
   },
   {
+    "title": "Level 15",
+    "complete": false
+  },
+  {
+    "title": "Level 20",
+    "complete": false
+  },
+  {
     "title": "Kill a rare",
     "complete": false
   },
   {
     "title": "Complete 25 quests",
-    "complete": false
-  },
-  {
-    "title": "Explore 2 zones",
     "complete": false
   },
   {
@@ -104,10 +108,6 @@
     "complete": false
   },
   {
-    "title": "Level 20",
-    "complete": false
-  },
-  {
     "title": "20 light leather",
     "complete": false
   },
@@ -116,23 +116,23 @@
     "complete": false
   },
   {
-    "title": "20 silverleaf",
+    "title": "20 Silverleaf",
     "complete": false
   },
   {
-    "title": "20 peacebloom",
+    "title": "20 Peacebloom",
     "complete": false
   },
   {
-    "title": "20 bolt of linen cloth",
+    "title": "20 Bolt of linen cloth",
     "complete": false
   },
   {
-    "title": "20 copper ores",
+    "title": "20 Copper ores",
     "complete": false
   },
   {
-    "title": "20 copper bars",
+    "title": "20 Copper bars",
     "complete": false
   },
   {
@@ -148,19 +148,19 @@
     "complete": false
   },
   {
-    "title": "Tailoring",
+    "title": "Tailoring (5)",
     "complete": false
   },
   {
-    "title": "Blacksmithing",
+    "title": "Blacksmithing (5)",
     "complete": false
   },
   {
-    "title": "Engineering",
+    "title": "Engineering (5)",
     "complete": false
   },
   {
-    "title": "Alchemy",
+    "title": "Alchemy (5)",
     "complete": false
   },
   {
@@ -176,15 +176,15 @@
     "complete": false
   },
   {
-    "title": "Inscription",
+    "title": "Inscription (5)",
     "complete": false
   },
   {
-    "title": "Jewelcrafting",
+    "title": "Jewelcrafting (5)",
     "complete": false
   },
   {
-    "title": "Leatherworking",
+    "title": "Leatherworking (5)",
     "complete": false
   },
   {
